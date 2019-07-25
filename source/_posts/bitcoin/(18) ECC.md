@@ -1,3 +1,22 @@
+---
+title: (18) ECC
+date: 2019-07-24 22:18:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - ECC
+    - 椭圆曲线
+    - 算法
+    - 加密
+    - 非对称加密
+---
+比特币加密算法，ECC（椭圆曲线加密）算法，离散对数计算的难度
+
+<!-- more -->
+
 ### **ECC**
 
 

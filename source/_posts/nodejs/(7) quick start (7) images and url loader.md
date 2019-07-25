@@ -1,3 +1,21 @@
+---
+title: (7) quick start (7) images and url loader
+date: 2019-07-23 22:07:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+webpack引入url插件处理图片资源文件。        
+图片url可能需要特殊处理，本地调试和生产打包用到的服务器路径都不相同，用url插件可以根据环境替换图片资源url域名。
+
+<!-- more -->
+
 ### **(7) quick start (7) images and url loader**
 
 
@@ -71,7 +89,7 @@ module: {
     },
 ...
 ```
-```limit: 10000```, images less than 10000 bytes will return a data URI instead of a path.
+`limit: 10000`, images less than 10000 bytes will return a data URI instead of a path.
 
 ### (3) images
 + App.js
@@ -104,6 +122,6 @@ body{
 
 ### (4) build project
 + build
-```~:npm run build```
+`~:npm run build`
 + debug
-```~:npm start```
+`~:npm start`

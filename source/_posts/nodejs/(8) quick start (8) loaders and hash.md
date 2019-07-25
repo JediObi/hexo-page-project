@@ -1,3 +1,21 @@
+---
+title: (8) quick start (8) loaders and hash
+date: 2019-07-23 22:08:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+webpack默认只能处理js文件，其他如css/图片/文件等资源文件，webpack需要引入相关插件才能处理。     
+由于浏览器缓存存在，所以为打包后的文件名加入hash，以确保浏览器加载最新的资源文件。
+
+<!-- more -->
+
 ### **(8) quick start (8) loaders and hash**
 
 

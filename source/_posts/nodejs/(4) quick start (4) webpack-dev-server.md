@@ -1,3 +1,20 @@
+---
+title: (4) quick start (4) webpack-dev-server
+date: 2019-07-23 22:04:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+使用webpack启动本地调试服务。在没有webpack这类工具之前，需要集成单独的服务器中间件部署静态资源，比如tomcat或者其他的node的服务器中间件。
+
+<!-- more -->
+
 ### **(4) quick start (4) webpack-dev-server**
 
 
@@ -13,10 +30,10 @@
 + ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 The following steps will lead you create http server for development.
-Here we use ```webpack-dev-server``` to build it for ```Hot Module Replacement``` and ```automatic refresh```.
+Here we use `webpack-dev-server` to build it for `Hot Module Replacement` and `automatic refresh`.
 
 ### install webpack-dev-server
-```~:npm install --save-dev webpack-dev-server```
+`~:npm install --save-dev webpack-dev-server`
 
 ### config in webpack.config.js
 ```js
@@ -61,9 +78,9 @@ module.exports = {
     },
 }
 ```
-```contentBase```: specify the content base, the server will serve the static files in this directory.
-```historyApiFallback```: if your project is SPA, make it true.
-```inline```: automatic refresh and hot module replacement.
+`contentBase`: specify the content base, the server will serve the static files in this directory.
+`historyApiFallback`: if your project is SPA, make it true.
+`inline`: automatic refresh and hot module replacement.
 ### node script
 + package.json
 ```json
@@ -86,12 +103,12 @@ module.exports = {
   }
 }
 ```
-```~:npm start```
+`~:npm start`
 ### Javascripts haven't been injected.
 ### multiple webpack config files
-```webpack --config webpack.config.js```
+`webpack --config webpack.config.js`
 Webpack could specify a config file for compiling.
-We've created some scripts in ```package.json``` to run ```webpack```.
+We've created some scripts in `package.json` to run `webpack`.
 Now we create a new config file for webpack-dev-server so solve the injection problem.
 + webpack.config.dev.js
 ```js
@@ -145,6 +162,6 @@ module.exports = {
   }
 }
 ```
-```~:npm start```
+`~:npm start`
 open http://localhost:3000
 

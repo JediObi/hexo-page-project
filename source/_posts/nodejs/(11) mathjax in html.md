@@ -1,3 +1,20 @@
+---
+title: (11) mathjax in html
+date: 2019-07-23 22:11:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - mathjax
+    - LaTex
+---
+为 react 项目引入 mathjax.js 用于处理 LaTex 语言数学公式
+
+<!-- more -->
+
 ### **(11) mathjax in html**
 
 
@@ -48,6 +65,6 @@ export default App;
 
 + development and build
 development
-```~:npm start```
+`~:npm start`
 build
-```~:npm run build```
+`~:npm run build`

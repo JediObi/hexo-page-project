@@ -1,3 +1,20 @@
+---
+title: (6) quick start (6) react
+date: 2019-07-23 22:06:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+webpack引入css插件处理css文件，webpack要处理的所有文件都是资源文件包括css，webpack要引入相应的插件才能正确处理不同类型的资源文件。
+
+<!-- more -->
+
 ### **(6) quick start (6) react**
 
 
@@ -14,24 +31,24 @@
 
 ### install modules
 + react
-```~:npm install --save-dev react```
+`~:npm install --save-dev react`
 React core.
 
 + react-dom
-```~:npm install --save-dev react-dom```
+`~:npm install --save-dev react-dom`
 ReactDOM for root render.
 
 + babel-loader
-```~:npm install --save-dev babel-loader```
-Use jsx language in js or jsx. Must config in ```webpack.config.js```.
+`~:npm install --save-dev babel-loader`
+Use jsx language in js or jsx. Must config in `webpack.config.js`.
 
 + babel-core
-```~:npm install --save-dev babel-core```
+`~:npm install --save-dev babel-core`
 babel core
 
 + babel-preset-react
-```~:npm install --save-dev babel-preset-react```
-babel for react. Must config in ```webpack.config.js```.
+`~:npm install --save-dev babel-preset-react`
+babel for react. Must config in `webpack.config.js`.
 
 ### webpack config
 + webpack.config.dev.js
@@ -102,10 +119,10 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
-```import React from 'react';``` every component needs to import react core module ```React```.
-```import ReactDOM from 'react-dom';``` if you want to render a component in your html page you have to import ReactDOM and use it.
+`import React from 'react';` every component needs to import react core module `React`.
+`import ReactDOM from 'react-dom';` if you want to render a component in your html page you have to import ReactDOM and use it.
 
 ### run
 + command
-```~:npm start```
+`~:npm start`
 

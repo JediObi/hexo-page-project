@@ -1,3 +1,17 @@
+---
+title: (9) P2SH - Multiple Signature, Contract Embry
+date: 2019-07-24 22:09:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+---
+比特币高级交易模式-多签和智能合约
+
+<!-- more -->
+
 ### **P2SH - Multiple Signature, Contract Embry**
 
 
@@ -10,7 +24,7 @@
 
 + M-of-N 
 ==> P2SH is the derivatives of M-of-N. 
-==> Create UTXO : M-of-N is the manual process to create a scriptPubKey with m, n and pubKey of each address. P2SH use a multi-signed address's scriptPubKey to instead of scriptPubKey by manual process. Actually the manual process in M-of-N will produce a multi-signed address just like P2SH (You can see this by ```decodescript <scriptPubKey>```).  
+==> Create UTXO : M-of-N is the manual process to create a scriptPubKey with m, n and pubKey of each address. P2SH use a multi-signed address's scriptPubKey to instead of scriptPubKey by manual process. Actually the manual process in M-of-N will produce a multi-signed address just like P2SH (You can see this by `decodescript <scriptPubKey>`).  
 ==> Use OUTPUT : The transaction need to be signed multiple times with all private keys of scriptPubKey to generate scriptSig. This processes is same with P2SH. 
 
 
@@ -19,7 +33,7 @@
 
 + #### generate 200 blocks at node 1
 
-```~:make generate BLOCKS=200```
+`~:make generate BLOCKS=200`
 
 ==================== State =======================
 
@@ -62,7 +76,7 @@ A2_balance:  0
 
 + #### send 200 btc from node1 to node2
 
-send 200 btc to ```A1```. 
+send 200 btc to `A1`. 
 ```
 ~:make sendfrom1 ADDRESS=moX3qTsaLt9NjvQBGHy78jvmLZX9ZWk7aP AMOUNT=200
 ~:make generate BLOCKS=10
@@ -81,7 +95,7 @@ A2_balance: 0
 
 ## (1) Create multiple signatured address
 
-Create a multiple signatured address ```A3``` to receive output. 
+Create a multiple signatured address `A3` to receive output. 
 
 + #### command
 
@@ -138,7 +152,7 @@ A3_balance: 0
 
 ## (2) Create P2SH transaction
 
-Create transaction ```X``` that outputs to the multiple signatured address ```A3```. 
+Create transaction `X` that outputs to the multiple signatured address `A3`. 
 
 + #### command
 

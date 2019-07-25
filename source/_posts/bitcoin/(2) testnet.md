@@ -1,3 +1,18 @@
+---
+title: (2) Testnet on Docker
+date: 2019-07-24 22:02:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - Docker
+---
+使用 比特币 Docker 测试网络
+
+<!-- more -->
+
 ### **Testnet on Docker**
 
 (1) pull bitcoin testnet image  

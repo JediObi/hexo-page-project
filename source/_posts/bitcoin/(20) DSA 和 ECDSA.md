@@ -1,3 +1,24 @@
+---
+title: (20) DSA 和 ECDSA
+date: 2019-07-24 22:20:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - DSA
+    - ECDSA
+    - ECC
+    - 椭圆曲线
+    - 算法
+    - 加密
+    - 非对称加密
+---
+比特币加密算法，DSA 非对称加密的数字签名算法； ECDSA 基于椭圆曲线的非对称加密的数字签名算法
+
+<!-- more -->
+
 ### **DSA 和 ECDSA**
 
 

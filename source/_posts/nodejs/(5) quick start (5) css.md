@@ -1,3 +1,20 @@
+---
+title: (5) quick start (5) css
+date: 2019-07-23 22:05:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+webpack引入css插件处理css文件，webpack要处理的所有文件都是资源文件包括css，webpack要引入相应的插件才能正确处理不同类型的资源文件。
+
+<!-- more -->
+
 ### **(5) quick start (5) css**
 
 
@@ -28,11 +45,11 @@ The following steps will lead you to create css file and use styles in the at js
 └── webpack.config.js
 ```
 ### loaders
-Webpack can only deal with javascript originally. It must install special loaders to deal with target type files. CSS files need ```css-loader``` and ```style-loader```.
+Webpack can only deal with javascript originally. It must install special loaders to deal with target type files. CSS files need `css-loader` and `style-loader`.
 css-loader process the url in js or html.
 style-loader replace url to css code in js or html.
 + install
-```~:npm install css-loader style-loader --save-dev```
+`~:npm install css-loader style-loader --save-dev`
 + config of dev server
 ```js
 const path = require('path');
@@ -79,4 +96,4 @@ document.write("hello, this is a test!");
 ```
 
 ### result
-```~:npm start```
+`~:npm start`

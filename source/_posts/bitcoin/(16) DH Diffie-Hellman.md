@@ -1,3 +1,21 @@
+---
+title: (16) DH Diffie-Hellman
+date: 2019-07-24 22:16:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - DH
+    - 算法
+    - 加密
+    - 非对称加密
+---
+比特币加密算法，DH(Diffie-Hellman)算法，非对称的秘钥交换算法
+
+<!-- more -->
+
 ### **DH Diffie-Hellman**
 
 

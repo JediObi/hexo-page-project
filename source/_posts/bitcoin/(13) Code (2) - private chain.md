@@ -1,9 +1,25 @@
+---
+title: (13) Code (2) - private chain
+date: 2019-07-24 22:13:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - private chain
+    - 私链
+---
+创建私链
+
+<!-- more -->
+
 ### **Code (2) - private chain**
 
 
 
 The most concise way to create private chain is that change the config parameters of the core code. 
-You can see these config parameters in ```chainparams.cpp```. 
+You can see these config parameters in `chainparams.cpp`. 
 
 Now we start to create a private chain. 
 
@@ -15,7 +31,7 @@ Now we start to create a private chain.
 
 + ##### The original code 
 
-```CreateGenesisBlock``` to create genesis block. 
+`CreateGenesisBlock` to create genesis block. 
 
 ```
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
@@ -29,17 +45,17 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 + ##### the places need to modify
 
 1. the code of create genesis block 
-```genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);``` 
+`genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);` 
 1231006505 nTime, the time of the block 
 
 2. set mining difficulty, the lowest difficulty 
-```consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");``` 
+`consensus.powLimit = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff");` 
 
 3. total amount of coins 
-```consensus.nSubsidyHalvingInterval = 210000;``` 
+`consensus.nSubsidyHalvingInterval = 210000;` 
 
 4. change the initial reward 
-```genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);``` 
+`genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);` 
 50 * COIN is the inital reward. 
 
 5. change the time period of difficulty changing 

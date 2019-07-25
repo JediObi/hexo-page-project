@@ -1,11 +1,13 @@
 ---
-title: Transaction data structure
-date: 2019-07-24 22:24:07
+title: (1) Transaction data structure
+subtitle: test
+date: 2019-07-24 22:01:07
+copyright: true
 categories:
-    -bitcoin
+    - bitcoin
 tags:
-    -bitcoin
-    -数字货币
+    - bitcoin
+    - 数字货币
 ---
 比特币-交易的数据结构
 

@@ -1,3 +1,17 @@
+---
+title: (11) Code (1) - install bitcoin
+date: 2019-07-24 22:11:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+---
+区块链源码编译安装
+
+<!-- more -->
+
 ### **Code (1) - install bitcoin**
 
 

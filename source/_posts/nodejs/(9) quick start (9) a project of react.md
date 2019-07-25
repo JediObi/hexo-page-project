@@ -1,3 +1,18 @@
+---
+title: (9) quick start (9) a project of react
+date: 2019-07-23 22:09:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+---
+一个完整的 react demo
+
+<!-- more -->
+
 ### **(9) quick start (9) a project of react**
 
 

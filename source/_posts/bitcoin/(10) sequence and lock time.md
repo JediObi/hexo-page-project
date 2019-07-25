@@ -1,3 +1,17 @@
+---
+title: (10) sequence and lock time
+date: 2019-07-24 22:10:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+---
+区块数据结构中的序列号和时间戳的作用
+
+<!-- more -->
+
 ### **sequence and lock time**
 
 

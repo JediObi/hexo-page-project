@@ -1,3 +1,17 @@
+---
+title: (4) OP_CHECKSIG 交易验签
+date: 2019-07-24 22:04:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+---
+比特币区块链交易验签流程
+
+<!-- more -->
+
 ### **OP_CHECKSIG 交易验签**
 
 

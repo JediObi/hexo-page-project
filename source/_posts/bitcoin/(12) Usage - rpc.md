@@ -1,13 +1,28 @@
+---
+title: (12) Usage - rpc
+date: 2019-07-24 22:12:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - RPC
+---
+区块链网络的 rpc 调用
+
+<!-- more -->
+
 ### **Usage - rpc**
 
 
 
 ### (1) start service
 
-A node could start with by ```bitcoind```
+A node could start with by `bitcoind`
 There are some configs of this command.  
-You could set this commad through ```bitcoind -server=1```.
-Or ```bitcoind -datadir=<directory_path>``` or ```bitcoind -conf=<file_path>``` to specify config file. 
+You could set this commad through `bitcoind -server=1`.
+Or `bitcoind -datadir=<directory_path>` or `bitcoind -conf=<file_path>` to specify config file. 
 
 + bitcoin.conf example
 
@@ -36,16 +51,16 @@ rpcallowip=0.0.0.0/0
 rpcuser=admin2
 rpcpassword=123
 ```
-```listen``` default 1;0 don't accept p2p connections from outside. 1 accept. 
-```connect``` only connect specified IP:port 
-```port``` the port to listen p2p connections from outside. 
-```rpcport``` the port to listen rpc connection 
-```server``` accept command and rpc command or not 
-```rpcuser, rpcpassword``` rpc user info 
-```testnet``` use test chain; 0 or 1 
-```regtest``` Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development. 
-```dnsseed``` Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used) 
-```rpcallowip=0.0.0.0/0``` Allow JSON-RPC connections from specified source. 
+`listen` default 1;0 don't accept p2p connections from outside. 1 accept. 
+`connect` only connect specified IP:port 
+`port` the port to listen p2p connections from outside. 
+`rpcport` the port to listen rpc connection 
+`server` accept command and rpc command or not 
+`rpcuser, rpcpassword` rpc user info 
+`testnet` use test chain; 0 or 1 
+`regtest` Enter regression test mode, which uses a special chain in which blocks can be solved instantly. This is intended for regression testing tools and app development. 
+`dnsseed` Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used) 
+`rpcallowip=0.0.0.0/0` Allow JSON-RPC connections from specified source. 
 
 
 

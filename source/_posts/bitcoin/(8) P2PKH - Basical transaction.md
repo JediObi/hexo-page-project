@@ -1,3 +1,17 @@
+---
+title: (8) P2PKH - Basical transaction
+date: 2019-07-24 22:08:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+---
+比特币基本交易模式-比特币转账
+
+<!-- more -->
+
 ### **P2PKH - Basical transaction**
 
 The creation of a basical transaction. 
@@ -13,7 +27,7 @@ The recommendation of the prevoius output.
 
 + #### generate 200 blocks at node 1
 
-```~:make generate BLOCKS=200``` 
+`~:make generate BLOCKS=200`        
 ==================== State =======================
 
 Wallet at Node1 -> W1 
@@ -53,7 +67,7 @@ A2_balance:  0
 
 + #### send 200 btc from node1 to node2
 
-send 200 btc to ```A1```. 
+send 200 btc to `A1`. 
 ```
 ~:make sendfrom1 ADDRESS=moX3qTsaLt9NjvQBGHy78jvmLZX9ZWk7aP AMOUNT=200
 ~:make generate BLOCKS=10
@@ -72,7 +86,7 @@ A2_balance: 0
 
 ## (2) Create transaction
 
-Create transaction ```X``` that sends 10 coin to A1 from A2. 
+Create transaction `X` that sends 10 coin to A1 from A2. 
 
 + #### command
 ```

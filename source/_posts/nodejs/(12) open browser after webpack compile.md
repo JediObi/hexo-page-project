@@ -1,9 +1,26 @@
+---
+title: (12) open browser after webpack compile
+date: 2019-07-23 22:12:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+调试服务器启动后自动打开浏览器展示首页。        
+npm start调用的是webpack的插件，为webpack安装相关插件，可以在服务启动后自动打开指定浏览器访问指定的页面。
+
+<!-- more -->
+
 ### **(12) open browser after webpack compile**
 
 
-+ use plugin ```open-browser-webpack-plugin```
++ use plugin `open-browser-webpack-plugin`
 + install
-```~:npm install --save-dev open-browser-webpack-plugin```
+`~:npm install --save-dev open-browser-webpack-plugin`
 
 + webpack.config.dev.js
 ```js
@@ -82,4 +99,4 @@ module.exports = {
 ```
 
 + run 
-```~:npm start```
+`~:npm start`

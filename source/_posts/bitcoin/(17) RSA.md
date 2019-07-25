@@ -1,3 +1,21 @@
+---
+title: (17) RSA
+date: 2019-07-24 22:17:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - RSA
+    - 算法
+    - 加密
+    - 非对称加密
+---
+比特币加密算法，RSA算法，原理基于大数分解质因子困难的加密算法
+
+<!-- more -->
+
 ### **RSA**
 
 

@@ -1,3 +1,19 @@
+---
+title: (3) quick start (3) html pages with javascript
+date: 2019-07-23 22:03:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+---
+react 快速开始    
+对于webpack来说，html也是资源文件的一种，需要为webpack引入相关插件，webpack才会识别html，并且可以在编译时注入相关的js
+
+<!-- more -->
+
 ### **(3) quick start (3) html pages with javascript**
 
 
@@ -13,8 +29,9 @@
 + ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 The following steps will show you how to use webpack to compile html pages.
-We have built ```bundle.js``` in [quick start (2) webpack config](/p/71e4b19c1264), now we use it in html pages.
+We have built `bundle.js` in [quick start (2) webpack config](/p/71e4b19c1264), now we use it in html pages.
 The final tree without node_modules:
+
 ```
 .
 ├── package.json
@@ -25,9 +42,10 @@ The final tree without node_modules:
 │   └── index.js
 └── webpack.config.js
 ```
+
 ### install html-webpack-plugin
 This plugin will use your html pages source files as templates to create pages in buiding step.
-```~:npm install --save-dev html-build-plugin```
+`~:npm install --save-dev html-build-plugin`
 ### code sources
 #### (1) make direcotry for public items
 ```
@@ -56,7 +74,7 @@ This plugin will use your html pages source files as templates to create pages i
 document.write("hello, this is a test!");
 ```
 ### html config in webpack.config.js
-This config will use public/index.html as a template to create build/index.html and inject ```bundle.js``` into build/index.html.
+This config will use public/index.html as a template to create build/index.html and inject `bundle.js` into build/index.html.
 ```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -93,9 +111,9 @@ module.exports = {
     ],
 }
 ```
-inject:```true``` means inject all js at the bottom of the <body>
+inject:`true` means inject all js at the bottom of the <body>
 
 ### build project
 + command
-```~:npm run build```
+`~:npm run build`
 + open build/index.html in browser

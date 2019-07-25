@@ -1,3 +1,23 @@
+---
+title: (19) ECDH
+date: 2019-07-24 22:19:07
+copyright: true
+categories:
+    - bitcoin
+tags:
+    - bitcoin
+    - 数字货币
+    - ECDH
+    - ECC
+    - 椭圆曲线
+    - 算法
+    - 加密
+    - 非对称加密
+---
+比特币加密算法，ECDH算法，使用ECC产生公钥，使用DH算法交换私钥
+
+<!-- more -->
+
 ### **ECDH**
 
 

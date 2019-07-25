@@ -1,3 +1,20 @@
+---
+title: (1) quick start (1) init project
+date: 2019-07-23 22:01:07
+copyright: true
+categories:
+    - node
+    - react
+tags:
+    - node
+    - react
+    - webpack
+---
+react 快速开始    
+初始化项目
+
+<!-- more -->
+
 ### **(1) quick start (1) init project**
 
 
@@ -19,13 +36,14 @@ the final tree
 └── package.json
 
 ```
+
  ## init a project
 ```
 ~:mkdir lesson1
 ~:cd lesson1
 ~:npm init
 ```
-```npm init``` will generate ```package.json``` in lesson1/. 
+`npm init` will generate `package.json` in lesson1/. 
 + package.json
 ```json
 {
@@ -40,7 +58,7 @@ the final tree
   "license": "ISC"
 }
 ```
-```package.json``` file manages the javascript packages or modules like maven pom.xml. Now add ```webpack``` to our project , ```name``` and ```version``` specification of it like the followting code:
+`package.json` file manages the javascript packages or modules like maven pom.xml. Now add `webpack` to our project , `name` and `version` specification of it like the followting code:
 + command
 ```
 ~:npm install --save-dev webpack
@@ -68,6 +86,6 @@ the final tree
     "webpack": "^3.10.0"
 }
 ```
-```--save```: if we don't use this command, we have to add the dependencies manually. This command will add packages to ```dependencies```.
-```--save-dev```: it's similar to ```--save```, but it will add packages to ```devDependencies```.
+`--save`: if we don't use this command, we have to add the dependencies manually. This command will add packages to `dependencies`.
+`--save-dev`: it's similar to `--save`, but it will add packages to `devDependencies`.
 dev means we just use these packages in development, and in our final product, some of the packages we don't need such like webpack, and some will be compiled into a more advanced file such like jQuery. 

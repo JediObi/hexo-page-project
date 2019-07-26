@@ -14,7 +14,7 @@ react 快速开始
 
 <!-- more -->
 
-### **(3) quick start (3) html pages with javascript**
+## **(3) quick start (3) html pages with javascript**
 
 
 + ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
@@ -30,6 +30,7 @@ react 快速开始
 
 The following steps will show you how to use webpack to compile html pages.
 We have built `bundle.js` in [quick start (2) webpack config](/p/71e4b19c1264), now we use it in html pages.
+
 The final tree without node_modules:
 
 ```
@@ -43,38 +44,47 @@ The final tree without node_modules:
 └── webpack.config.js
 ```
 
-### install html-webpack-plugin
+### **1. install html-webpack-plugin**
+
 This plugin will use your html pages source files as templates to create pages in buiding step.
 `~:npm install --save-dev html-build-plugin`
-### code sources
-#### (1) make direcotry for public items
-```
-~:cd lesson1
-~:mkdir public
-```
-#### (2) code html
-+ index.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div id="root"></div>
-</body>
-</html>
-```
-#### (3) code javascript
+
+### **2. code sources**
+
+**2.1 make direcotry for public items**
+
+    ```
+    ~:cd lesson1
+    ~:mkdir public
+    ```
+
+**2.2. code html**
+
++ ##### 2.2.1 index.html
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    </html>
+    ```
+**2.3 code javascript**
 ```js
 // console.log('Hello, this is a test!');
 document.write("hello, this is a test!");
 ```
-### html config in webpack.config.js
+
+### **3. html config in webpack.config.js**
+
 This config will use public/index.html as a template to create build/index.html and inject `bundle.js` into build/index.html.
+
 ```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -113,7 +123,10 @@ module.exports = {
 ```
 inject:`true` means inject all js at the bottom of the <body>
 
-### build project
-+ command
-`~:npm run build`
-+ open build/index.html in browser
+### **4. build project**
+
++ #### 4.1 command
+  
+    `~:npm run build`
+
++ #### 4.2 open build/index.html in browser

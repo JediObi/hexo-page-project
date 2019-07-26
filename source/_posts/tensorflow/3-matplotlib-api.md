@@ -13,7 +13,7 @@ matplotlib 常用api
 
 <!-- more -->
 
-### (1) 点图 plot()
+### **1. 点图 plot()
 
 ```python
 x = [1,2,3]
@@ -22,7 +22,7 @@ plt.plot(x,y)
 plt.show()
 ```
 
-### (2) 柱形图 bar()
+### **2. 柱形图 bar()**
 
 ```python
 x = [1,2,3]
@@ -31,7 +31,7 @@ plt.bar(x,y)
 plt.show()
 ```
 
-### (3) 分区
+### **3. 分区**
 
 ```python
 x = [1,2,3]
@@ -46,9 +46,9 @@ plt.bar(x2,y2)
 plt.show()
 ```
 
-### (4) 刻度
+### **4. 刻度**
 
-1. 刻度
++ #### 4.1 刻度
 
     ```python
     x = np.linspace(-np.pi, np.pi, 256,endpoint=True)
@@ -60,7 +60,7 @@ plt.show()
     plt.show()
     ```
 
-2. 刻度替换
++ #### 4.2 刻度替换
 
     此处替换为 LaTex
     ```python
@@ -75,20 +75,20 @@ plt.show()
     plt.show()
     ```
 
-### (5) 坐标轴上下限
+### **5. 坐标轴上下限**
 
 ```python
 plt.ylim(-1.0, 1.0)
 ```
 
-### (6) 线条颜色, 粗细, 样式
+### **6. 线条颜色, 粗细, 样式**
 
 ```python
 # 可以简写颜色和样式, 比如bo 表示蓝色blue和实心圆样式, 样式还有很多可以取查表
 plot(x, y, color="blue", linewidth=2.5, linestyle="-")
 ```
 
-### (7) 坐标轴 脊柱 spines
+### **7. 坐标轴 脊柱 spines**
 
 通过隐藏矩形边框的top和right,把left和bottom位移就可以构造出象限坐标轴, 脊柱
 ```python
@@ -103,18 +103,18 @@ ax.spines['left'].set_position(('data',0))
 ...
 ```
 
-### (8) 坐标轴 名称 和 图例
+### **8. 坐标轴 名称 和 图例**
 
-1. 坐标轴名称
++ #### 8.1 坐标轴名称
 
     ```pyhton
     plt.xlabel("xaxis")
     plt.ylabel("yaxis")
     ```
 
-2. 图例
++ #### 8.2 图例
 
-    + 为所有plot/bar/scatter绘制到图例
+    + ##### 8.2.1 为所有plot/bar/scatter绘制到图例
 
         ```python
         # 把已有的作为对象
@@ -123,7 +123,7 @@ ax.spines['left'].set_position(('data',0))
         plt.legend(loc='upper left')
         ```
 
-    + 为指定的对象绘制图例
+    + ##### 8.2.2 为指定的对象绘制图例
 
         注意 对象命名后加上"`,`"
         ```python
@@ -132,7 +132,7 @@ ax.spines['left'].set_position(('data',0))
         plt.legend([mysin], ['mysin'], loc='upper left')
         ```
 
-    + 为特殊点加注释
+    + ##### 8.2.3 为特殊点加注释
 
         ```python
         # 选取x轴一点 
@@ -148,7 +148,7 @@ ax.spines['left'].set_position(('data',0))
                     arrowprops=dict(arrowstyle="->", connectionstyle="arc3, rad=.2"))
         ```
 
-    + 其他图像类型
+    + ##### 8.2.4 其他图像类型
 
         ```
         # 横向柱形图
@@ -164,9 +164,9 @@ ax.spines['left'].set_position(('data',0))
         # 3D等
         ```
 
-    + 重要的api
+    + ##### 8.2.5 重要的api
 
-    + figure()
+    + ##### 8.2.6 figure()
 
         可以用于窗口属性设置
         ```python

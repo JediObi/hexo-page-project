@@ -13,11 +13,11 @@ cmake是对make的包装，它可以根据配置文件对编译链接整个工�
 
 <!-- more -->
 
-### (1) simple usage
+### **1. simple usage**
 
 cmake是对make的包装，底层依然是make
 
-+ tree
++ #### 1.1 tree
 
     ```
     .
@@ -26,7 +26,7 @@ cmake是对make的包装，底层依然是make
     └── test.cpp
     ```
 
-+ test.cpp
++ #### 1.2 test.cpp
 
     ```c++
     #include <iostream>
@@ -37,7 +37,7 @@ cmake是对make的包装，底层依然是make
     }
     ```
 
-+ CMakeLists.txt
++ #### 1.3 CMakeLists.txt
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)
@@ -47,7 +47,7 @@ cmake是对make的包装，底层依然是make
     add_executable(testcmake
             test.cpp)
     ```
-    ==> 
+    **==>**
     ```
     add_executable(testcmake
             test.cpp)
@@ -55,7 +55,7 @@ cmake是对make的包装，底层依然是make
     testcmake is the output file name   
     test.cpp is dependencies source code.
 
-+ cmake
++ #### 1.4 cmake
 
     执行编译
     ```
@@ -65,11 +65,11 @@ cmake是对make的包装，底层依然是make
     ~:./testcmake
     ```
 
-### (2) configure a header file for make(g++)
+### **2. configure a header file for make(g++)**
 
 使用cmake脚本配置一个header文件，某个cpp可能include了这个头文件，但是在源码阶段不需要这个header（比如版本号等公共信息），但是在make时这个header必须存在，所以使用cmake生成。
 
-+ CMakeLists.txt
++ #### 2.1 CMakeLists.txt
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)
@@ -92,11 +92,10 @@ cmake是对make的包装，底层依然是make
     # Add the executable
     add_executable(testCmake test.cpp)
     ```
-    ==>     
+    **==>**     
     `set(test_version_major 1)`    
     will create a variable test_version_major=1     
-
-    ==>
+    **==>**     
     ```
     # 这行将使用 testConfig.h.in 里的代码生成头文件 testConfig.h
     configure_file(  "${PROJECT_SOURCE_DIR}/testConfig.h.in" 
@@ -104,7 +103,7 @@ cmake是对make的包装，底层依然是make
     ```
     will use `"${PROJECT_SOURCE_DIR}/testConfig.h.in"` code to create `"${PROJECT_BINARY_DIR}/testConfig.h"  `
 
-    ==>
+    **==>**
     ```
     # 上边的代码生成了头文件，这行代码使make包含生成的头文件所在目录，用于查找头文件
     include_directories("${PROJECT_BINARY_DIR}")
@@ -118,7 +117,7 @@ cmake是对make的包装，底层依然是make
     #define socket_version_minor @socket_version_minor@
     ```
 
-+ test.cpp
++ #### 2.2 test.cpp
 
     ```c++
     #include <iostream>
@@ -132,15 +131,15 @@ cmake是对make的包装，底层依然是make
     }
     ```
 
-### (3) link libraries
+### **3. link libraries**
 
 以上代码展示了生成可执行文件，这个例子展示创建共享库(静态so和动态a)，大多数文件是提供功能依赖，这些文件都要构建成库文件。
 
-+ library
++ #### 3.1 library
 
     库文件源码，一个独立的模块
 
-    ./lib_code/Add/Add.h
+    **./lib_code/Add/Add.h**
     ```c++
     #ifndef SOCKET_ADD_H
     #define SOCKET_ADD_H
@@ -150,7 +149,7 @@ cmake是对make的包装，底层依然是make
     #endif //SOCKET_ADD_H
     ```
 
-    ./lib_code/Add/Add.cpp
+    **./lib_code/Add/Add.cpp**
     ```c++
     #include "Add.h"
 
@@ -160,19 +159,19 @@ cmake是对make的包装，底层依然是make
     }
     ```
 
-    ./lib_code/Add/CMakeLists.txt
+    **./lib_code/Add/CMakeLists.txt**
     ```
     # 这句把cpp文件编译成静态库文件Add_lib.so，add_library可以指定静态还是动态，默认静态SHARED
     add_library(Add_lib Add.cpp)
     ```
-    default type is STATIC.     
-    add_library(Add_lib SHARED Add.cpp) to create a .so for make.
+    default type is `STATIC`.     
+    `add_library(Add_lib SHARED Add.cpp)` to create a .so for make.
 
-+ use library
++ #### 3.2 use library
 
     引用库文件
 
-    ./CMakeLists.txt
+    **./CMakeLists.txt**
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)
@@ -207,13 +206,13 @@ cmake是对make的包装，底层依然是make
     target_link_libraries(testcmake Add_lib)
 
     ```
-    ==>
+    **==>**
     `add_subdirectory(lib_code/Add)`        
     will run CMakeLists.txt in this directory.
 
-    ==>
+    **==>**
 
-    ./test.cpp
+    **./test.cpp**
 
     源码 include 库文件的header
 
@@ -231,7 +230,7 @@ cmake是对make的包装，底层依然是make
     }
     ```
 
-+ cmake
++ #### 3.3 cmake
 
     ```
     ~:cd build
@@ -241,14 +240,14 @@ cmake是对make的包装，底层依然是make
     ~:testcmake
     ```
 
-### (4) control libraries
+### **4. control libraries**
 
 cmake的逻辑语句，对头文件做控制，对源码也可控制
 
-+ option
++ #### 4.1 option
 
     this command will setup a switch for libraries.     
-    ./CMakeLists.txt
+    **./CMakeLists.txt**
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)
@@ -290,11 +289,11 @@ cmake的逻辑语句，对头文件做控制，对源码也可控制
 
     ```
 
-+ cmakedefine
++ #### 4.2 cmakedefine
 
     use cmakedefine to control define in code
 
-    ./testConfig.h.in
+    **./testConfig.h.in**
 
     ```c++
     #define socket_version_major @socket_version_major@
@@ -302,9 +301,9 @@ cmake的逻辑语句，对头文件做控制，对源码也可控制
     #cmakedefine USE_MYADD
     ```
 
-+ code
++ #### 4.3 code
 
-    ./test.cpp
+    **./test.cpp**
 
     ```c++
     #include <iostream>
@@ -326,7 +325,7 @@ cmake的逻辑语句，对头文件做控制，对源码也可控制
     }
     ```
 
-+ cmake
++ #### 4.4 cmake
 
     ```
     ~:cd build
@@ -335,7 +334,7 @@ cmake的逻辑语句，对头文件做控制，对源码也可控制
     ~:make
     ```
 
-### (5) install
+### **5. install**
 
 把生成的可执行文件添加到系统路径        
 把头文件添加到系统查找路径
@@ -345,9 +344,9 @@ install(TARGETS test DESTINATION bin)
 install(FILES ${PROJECT_BINARY_DIR}/testConfig.h DESTINATION include)
 ```
 
-+ Example
++ #### 5.1 Example
 
-    ./CMakeLists.txt
+    **./CMakeLists.txt**
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)

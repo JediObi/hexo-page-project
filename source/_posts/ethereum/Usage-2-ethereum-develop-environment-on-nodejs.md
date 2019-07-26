@@ -18,7 +18,7 @@ tags:
 
 <!-- more -->
 
-## (1) install truffle and testrpc
+### **1. install truffle and testrpc**
 
 ```
 ~:sudo npm i -g truffle
@@ -32,9 +32,9 @@ Maybe you need to make soft link of the package.
 ~:sudo ln -s /usr/local/bin/node-8.xx/bin/testrpc /usr/local/bin/testrpc
 ```
 
-## (2) start development
+### **2. start development**
 
-+ #### start testnet by testrpc
++ #### 2.1 start testnet by testrpc
 
     `testrpc` will just build a temporary block chain in RAM.       
     The development environment doesn't need the huge testnet data like rinkeby.        
@@ -43,7 +43,7 @@ Maybe you need to make soft link of the package.
     ~:testrpc
     ```
 
-+ #### init project
++ #### 2.2 init project
 
     ```
     ~:mkdir test_contract
@@ -62,7 +62,7 @@ Maybe you need to make soft link of the package.
     └── truffle.js  // config file, u can use truffle-conif.js or this.
     ```
 
-+ #### config network to deploy contract
++ #### 2.3 config network to deploy contract
 
     truffle.js  
     Here we use two network.    
@@ -89,7 +89,7 @@ Maybe you need to make soft link of the package.
     };
     ```
 
-+ #### modify a new contract
++ #### 2.4 modify a new contract
 
     ```
     ~:cd contracts
@@ -114,7 +114,7 @@ Maybe you need to make soft link of the package.
     Input a, return a*7.    
     `pure` like const after method.
 
-+ #### compile and deploy
++ #### 2.5 compile and deploy
 
     1. modify deploy script.    
 

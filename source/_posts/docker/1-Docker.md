@@ -13,7 +13,7 @@ docker的安装配置。
 
 <!-- more -->
 
-### (1) install docker
+### **1. install docker**
 
 ```
 ~:wget -qO- https://get.docker.com/ | sh
@@ -23,9 +23,9 @@ docker的安装配置。
 ~:docker run hello-world
 ```
 
-### (2) docker mirrors
+### **2. docker mirrors**
 
- + /etc/docker/daemon.json
+ + #### 2.1 /etc/docker/daemon.json
 
     ```json
     {
@@ -33,23 +33,23 @@ docker的安装配置。
     }
     ```
 
-### (3) docker command
+### **3. docker command**
 
-+ run
++ #### 3.1 run
 
     ```
     ~:docker run ubuntu:15.10 /bin/echo "Hello world"
     ```
     run `ubuntu:15.10` and use `/bin/echo` to print "Hello world".
 
-+ ps
++ #### 3.2 ps
 
     ```
     ~:docker ps
     ```
     list the running containers.
 
-+ logs
++ #### 3.3 logs
 
     ```
     ~:docker logs {name[or container_id]}
@@ -58,69 +58,69 @@ docker的安装配置。
     pirnt the specified container's logs.   
     `logs -f` just like `tail -f`.
 
-+ stop
++ #### 3.4 stop
 
     ```
     ~:docker stop {name[or container_id]}
     ```
     stop the specified container.
 
-+ --help
++ #### 3.5 --help
 
     ```
     ~:docker [command] --help
     ```
     print help info of a docker command.
 
-+ pull
++ #### 3.6 pull
     ```
     ~:docker pull [repository]
     ```
     pull a repository image.
 
-+ images
++ #### 3.7 images
 
     ```
     ~:docker images
     ```
     list the images in this computer.
 
-+ port
++ #### 3.8 port
 
     ```
     ~:docker port {[name] or [container_id]} {[null] or [container port]}
     ```
     print the port mapping of a container.
 
-+ rm
++ #### 3.9 rm
 
     ```
     ~:docker rm {[name] or [container_id]}
     ```
     rm a container.
 
-+ search
++ #### 3.10 search
 
     ```
     ~:docker search [string]
     ```
     search specified content such like tomcat or mysql in image repository.
 
-+ commit
++ #### 3.11 commit
 
     ```
     ~:docker commit -m="commit info" -a="author name" [container_id] [target repository name like 'repository_name:tag']
     ```
     save your changes in this container by create a new container.
 
-+ tag
++ #### 3.12 tag
 
     ```
     ~:docker tag [container_id] [repository_name:tag]
     ```
     create a new container by new tag.
 
-### (4) docker arguments
+### **4. docker arguments**
 
 ```
 -t    create a terminal in the container
@@ -131,14 +131,14 @@ docker的安装配置。
 run --name     docker run --name [name] {} {} --> run a container and make a name for it.
 ```
 
-### (5) `attach` the same docker terminal
+### **5. `attach` the same docker terminal**
 
 ```
 ~:docker attach <container_id>
 ```
 open the same terminal of a container.
 
-### (6) ```exec``` execute another terminal
+### **6. ```exec``` execute another terminal**
 
 ```
 ~:docker exec -it <container_id> bash

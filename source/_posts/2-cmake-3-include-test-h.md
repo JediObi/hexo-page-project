@@ -14,9 +14,9 @@ cmake管理头文件依赖。
 
 <!-- more -->
 
-### (1) ```#include "test.h"
+### **1. ```#include "test.h"**
 
-+ tree
++ #### 1.1 tree
 
     ```
     .
@@ -27,7 +27,7 @@ cmake管理头文件依赖。
     └── sum.cpp
     ```
 
-+ main.cpp
++ #### 1.2 main.cpp
 
     ```cpp
     #include <iostream>
@@ -41,13 +41,13 @@ cmake管理头文件依赖。
     }
     ```
 
-+ sum.h
++ #### 1.3 sum.h
 
     ```cpp
     int sum(int,int);
     ```
 
-+ sum.cpp
++ #### 1.4 sum.cpp
 
     ```cpp
     #include "sum.h>
@@ -57,9 +57,9 @@ cmake管理头文件依赖。
     }
     ```
 
-+ g++
++ #### 1.5 g++
 
-    1) once all
+    + ##### 1.5.1 once all
 
         ```
         ~:g++ main.cpp sum.cpp
@@ -67,7 +67,7 @@ cmake管理头文件依赖。
         3
         ```
 
-    2) by step
+    + ##### 1.5.2 by step
 
         ```
         ~:g++ -c sum.cpp -o sum.o
@@ -77,9 +77,9 @@ cmake管理头文件依赖。
         3
         ```
 
-+ cmake
++ #### 1.6 cmake
 
-    1) CMakeLists.txt
+    + ##### 1.6.1 CMakeLists.txt
 
         ```cmake
         cmake_minimum_required(VERSION 3.10)
@@ -92,7 +92,7 @@ cmake管理头文件依赖。
         add_executable(main main.cpp sum.cpp)
         ```
 
-    2) build
+    + ##### 1.6.2 build
 
         ```
         ~:cd build
@@ -103,9 +103,9 @@ cmake管理头文件依赖。
         3
         ```
 
-### （2） change to modules
+### **2. change to modules**
 
-+ tree
++ #### 2.1 tree
     ```
     .
     ├── build
@@ -118,7 +118,7 @@ cmake管理头文件依赖。
 
     ```
 
-+ main.cpp
++ #### 2.2 main.cpp
 
     ```cpp
     #include <iostream>
@@ -132,13 +132,13 @@ cmake管理头文件依赖。
     }
     ```
 
-+ sum.h
++ #### 2.3 sum.h
 
-+ sum.cpp
++ #### 2.4 sum.cpp
 
-+ g++
++ #### 2.5 g++
 
-    1) once all
+    + ##### 2.5.1 once all
 
         ```
         ~:g++ main.cpp sum/sum.cpp
@@ -146,7 +146,7 @@ cmake管理头文件依赖。
         3
         ```
 
-    2) by step
+    + ##### 2.5.2 by step
 
         ```
         ~:g++ -c sum/sum.cpp -o sum/sum.o
@@ -156,11 +156,11 @@ cmake管理头文件依赖。
         3
         ```
 
-+ cmake
++ #### 2.6 cmake
 
-    1) script
+    + ##### 2.6.1 script
 
-        ./CMakeLists.txt
+        **./CMakeLists.txt**
 
         ```cmake
         cmake_minimum_required(VERSION 3.10)
@@ -177,13 +177,13 @@ cmake管理头文件依赖。
         target_link_libraries(main sum_lib)
         ```
 
-        ./sum/CMakeLists.txt
+        **./sum/CMakeLists.txt**
 
         ```cmake
         add_library(sum_lib sum.cpp)
         ```
 
-    2) run
+    + ##### 2.6.2 run
             
         ```
         ~:cd build
@@ -193,9 +193,9 @@ cmake管理头文件依赖。
         3
         ```
 
-### (3) more than one modules
+### **3. more than one modules**
 
-+ CMakeLists.txt
++ #### 3.1 CMakeLists.txt
 
     ```cmake
     cmake_minimum_required(VERSION 3.10)

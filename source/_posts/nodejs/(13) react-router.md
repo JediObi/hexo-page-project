@@ -15,10 +15,11 @@ react-router可以延迟加载子组件，单页面实现内容切换，通过ur
 
 <!-- more -->
 
-### **(13) react-router**
+## **(13) react-router**
 
 
-### why use react-router
+### **why use react-router**
+
 (1) lazy render sub-component.
 (2) forward instead of redirect.
 when you change URL just change something in one page. instead of request of a new page.

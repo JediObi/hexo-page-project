@@ -16,24 +16,24 @@ java数据结构简介，提交java任务。
 
 ## **overview usage of spark**
 
-### (1) download tgz
+### **1. download tgz**
 
-### (2) unzip
+### **2. unzip**
 
 ```
 ~:tar xzvf spark-xxx.tgz -C /home/user/bin
 ```
 
-### (3) start spart
+### **3. start spart**
 
 ```
 ~:cd /home/user/bin/spark/bin
 ~:./spark-shell
 ```
 
-### (4) java maven 统计词频
+### **4. java maven 统计词频**
 
-+ pom
++ #### 4.1 pom
     ```xml
     <dependency>
                 <groupId>org.apache.spark</groupId>
@@ -43,7 +43,7 @@ java数据结构简介，提交java任务。
     </dependency>
     ```
 
-+ com.user.test.TestMain
++ #### 4.2 com.user.test.TestMain
     ```java
     package com.user.test;
 
@@ -90,18 +90,18 @@ java数据结构简介，提交java任务。
     }
     ```
 
-+ package test.jar (/home/user/bin/test.jar)
++ #### 4.3 package test.jar (/home/user/bin/test.jar)
     ```
     ~:mvn clean compile package
     ```
 
-### (5) submit task
+### **5. submit task**
 
 ```
 ~:cd /home/user/bin/spark/bin
 ~:./spark-submit --class com.user.test.TestMain /home/user/bin/test.jar local
 ```
 
-### (6) 查看结果 
+### **6. 查看结果 **
 
 /home/user/work/spark-data/

@@ -21,11 +21,11 @@ You can see these config parameters in `chainparams.cpp`.
 
 Now we start to create a private chain. 
 
-### **(1) modify the genesis block**
+### **1. modify the genesis block**
 
-#### 1. modify the coinbase info of genesis block
+#### **1.1 modify the coinbase info of genesis block**
 
-+ #### The original code 
++ #### 1.1.1 The original code 
 
     `CreateGenesisBlock` to create genesis block. 
 
@@ -38,7 +38,7 @@ Now we start to create a private chain.
     }
     ```
 
-+ ##### the places need to modify
++ ##### 1.1.2 the places need to modify
 
     1. the code of create genesis block
 
@@ -68,7 +68,7 @@ Now we start to create a private chain.
 
 
 
-### **(2) change network protocol magic number**
+### **2. change network protocol magic number**
 
 You can change it to any other byte. 
 
@@ -81,15 +81,15 @@ pchMessageStart[3] = 0x07;
 
 
 
-### **(3) change listen port**
+### **3. change listen port**
 
-chainparams.cpp 
+**chainparams.cpp**
 
 ```cpp
 nDefaultPort = 18333;
 ```
 
-chianparamsbase.cpp 
+**chianparamsbase.cpp**
 
 ```cpp
 nRPCPort=8332;
@@ -97,7 +97,7 @@ nRPCPort=8332;
 
 
 
-### **(4) change the definition of seed connection**
+### **4. change the definition of seed connection**
 
 ```conf
 vSeeds.emplace_back("seed.bitcoin.sipa.be"); // Pieter Wuille, only supports x1, x5, x9, and xd
@@ -110,7 +110,7 @@ vSeeds.emplace_back("seed.bitcoin.sprovoost.nl"); // Sjors Provoost
 ```
 
 
-### **(5) change the prefixes of bitcoin**
+### **5. change the prefixes of bitcoin**
 
 ```
 base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
@@ -121,7 +121,7 @@ base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 ```
 
 
-### **(6) coinbase maturity confirmations**
+### **6. coinbase maturity confirmations**
 
 ```conf
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
@@ -129,7 +129,7 @@ static const int COINBASE_MATURITY = 100;
 ```
 
 
-### **(7) change checkpoint**
+### **7. change checkpoint**
 
 You can use the genesis block's check point. check point is used to prevent forks.  
 You can start bitcoind once and get the genesis from logs. 
@@ -161,7 +161,7 @@ checkpointData = {
 
 
 
-### **(8) change the scriptPubKey**
+### **8. change the scriptPubKey**
 
 ```js
 const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
@@ -169,13 +169,13 @@ const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe554827196
 
 
 
-### **(9) change the mining algorithm**
+### **9. change the mining algorithm**
 
 Bitcoind's original mining algorithm is in miner.cpp ScanHash.   
 ScanHash will keep the block info's first 5 fields (version, prev_block, merkle_root, timestamp, bits), totally 76 bytes, unchanged and via ergodic Nonce and then concat the 5 fields and Nonce to compute hash.   
 If the first K bytes is 0, then the hash is effective, mining susccess. 
 
-mining.cpp
+**mining.cpp**
 
 ```cpp
 UniValue generateBlocks(std::shared_ptr<CReserveScript> coinbaseScript, int nGenerate, uint64_t nMaxTries, bool keepScript)

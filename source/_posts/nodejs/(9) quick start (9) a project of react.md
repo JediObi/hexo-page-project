@@ -13,7 +13,7 @@ tags:
 
 <!-- more -->
 
-### **(9) quick start (9) a project of react**
+## **(9) quick start (9) a project of react**
 
 
 + ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
@@ -27,7 +27,8 @@ tags:
 + ### quick start (9) a project of react
 + ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
-### (1) directory tree
+### **1. directory tree**
+
 ```
 .
 ├── package.json
@@ -46,7 +47,8 @@ tags:
 └── webpack.config.js
 ```
 
-### (2) package.json
+### **2. package.json**
+
 ```json
 {
   "name": "lesson1",
@@ -78,7 +80,8 @@ tags:
 }
 ```
 
-### (3) webpack.config.js
+### **3. webpack.config.js**
+
 ```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -153,7 +156,8 @@ module.exports = {
 }
 ```
 
-### (4) webpack.config.dev.js
+### **4. webpack.config.dev.js**
+
 ```js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -217,57 +221,60 @@ module.exports = {
 }
 ```
 
-### (5) code
-+ #### index.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div id='root'></div>
-</body>
-</html>
-```
+### **5. code**
 
-+ #### index.js
-```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
++ #### 5.1 index.html
 
-ReactDOM.render(
-    <App />, document.getElementById('root')
-);
-```
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id='root'></div>
+    </body>
+    </html>
+    ```
 
-+ #### App.js
-```js
-import React, { Component } from 'react';
-import './App.css'
-import logo from './img/logo.svg';
++ #### 5.2 index.js
+    ```js
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App';
 
-class App extends Component{
+    ReactDOM.render(
+        <App />, document.getElementById('root')
+    );
+    ```
 
-    render(){
-        return (
-            <div>
-            <img src={logo} alt='logo'/>
-            </div>
-        );
++ #### 5.3 App.js
+    ```js
+    import React, { Component } from 'react';
+    import './App.css'
+    import logo from './img/logo.svg';
+
+    class App extends Component{
+
+        render(){
+            return (
+                <div>
+                <img src={logo} alt='logo'/>
+                </div>
+            );
+        }
     }
-}
 
-export default App;
-```
+    export default App;
+    ```
 
-+ #### App.css
-```css
-body{
-    background-image: url(./img/test.jpg);
-}
-```
++ #### 5.4 App.css
+
+    ```css
+    body{
+        background-image: url(./img/test.jpg);
+    }
+    ```

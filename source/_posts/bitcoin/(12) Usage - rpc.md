@@ -16,14 +16,14 @@ tags:
 ## **Usage - rpc**
 
 
-### **(1) start service**
+### **1. start service**
 
 A node could start with by `bitcoind`
 There are some configs of this command.  
 You could set this commad through `bitcoind -server=1`.
 Or `bitcoind -datadir=<directory_path>` or `bitcoind -conf=<file_path>` to specify config file. 
 
-+ #### bitcoin.conf example
++ #### 1.1 bitcoin.conf example
 
     ```properties
     # testnet-box functionality
@@ -61,23 +61,23 @@ Or `bitcoind -datadir=<directory_path>` or `bitcoind -conf=<file_path>` to speci
     `dnsseed` Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect used)    
     `rpcallowip=0.0.0.0/0` Allow JSON-RPC connections from specified source.    
 
-### **(2) command on local and rpc**
+### **2. command on local and rpc**
 
 create new transaction 
 
-+ #### bitcoin-cli
++ #### 2.1 bitcoin-cli
 
     ```
     ~:bitcoin-cli -conf=/home/user/bitcoin.conf createrawtransaciton '[{"txid":"xxx", "vout":1}]' '{"address1":10.00, "address2":4.99999}'
     ```
 
-+ #### bitcoin-cli
++ #### 2.2 bitcoin-cli
 
     ```
     ~:bitcoin-cli -datadir=/home/user/bitcoin1 createrawtransaciton '[{"txid":"xxx", "vout":1}]' '{"address1":10.00, "address2":4.99999}'
     ```
 
-+ #### curl rpc
++ #### 2.3 curl rpc
 
     ```
     ~:curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "createrawtransaction", "params": ["[{\"txid\":\"myid\",\"vout\":0}]", "{\"data\":\"00010203\"}"] }' -H 'content-type: text/plain;' http://127.0.0.1:19011/

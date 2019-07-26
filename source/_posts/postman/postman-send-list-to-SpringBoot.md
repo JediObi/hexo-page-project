@@ -13,19 +13,19 @@ tags:
 
 <!-- more -->
 
-### (1) postman
+### **1. postman**
 
-+ Body->form-data
++ #### 1.1 Body->form-data
     ```
     key    value
     ids    1
     ids    2
     ```
-+ send
++ #### 1.2 send
 
-### (2) spring
+### **2. spring**
 
-+ @RequestParam("ids")
++ #### 2.1 @RequestParam("ids")
     ```java
         @PostMapping("/testJob")
         public void testJob3(@RequestParam("ids") List<Integer> ids) {

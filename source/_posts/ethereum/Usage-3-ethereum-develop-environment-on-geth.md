@@ -18,10 +18,10 @@ tags:
 
 <!-- more -->
 
-Build a private chain for development.
+Build a private chain for development.  
 Config your genesis block first.
 
-### (1) mkdir
+### **1. mkdir**
 
 ```
 ~:mkdir test
@@ -29,9 +29,9 @@ Config your genesis block first.
 ~;mkdir chain
 ```
 
-### (2) genesis block config
+### **2. genesis block config**
 
-test/genesis.json
+**test/genesis.json**
 ```
 {
   "config": {
@@ -52,13 +52,13 @@ test/genesis.json
 }
 ```
 
-### (3) init and generate your genesis block for your private chain
+### **3. init and generate your genesis block for your private chain**
 
 ```
 ~:geth init ./genesis.json --datadir "./chain"
 ```
 
-+ geth commands
++ #### 3.1 geth commands
     ```
     account           Manage accounts
     attach            Start an interactive JavaScript environment (connect to node)
@@ -84,13 +84,13 @@ test/genesis.json
 
     ```
 
-### (4) start your private chain and open a console for interactive
+### **4. start your private chain and open a console for interactive**
 
 ```
 ~:geth --datadir "./chain" --networkid 15 --nodiscover --maxpeers 0 console
 ```
 
-+ usage
++ #### 4.1 usage
 
     1) create account
 

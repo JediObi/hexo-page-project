@@ -12,18 +12,18 @@ tags:
 
 <!-- more -->
 
-### **P2PKH - Basical transaction**
+## **P2PKH - Basical transaction**
 
 The creation of a basical transaction.  
-==> To create a transaction, you need addresses for output position.    
-==> The basical transaction is used to send some btc from one address to another address.   
-==> Don't forget the address for change.
+**==>** To create a transaction, you need addresses for output position.    
+**==>** The basical transaction is used to send some btc from one address to another address.   
+**==>** Don't forget the address for change.
 The recommendation of the prevoius output.  
-==> you have to use a previous utxo and sign it with your private key.
+**==>** you have to use a previous utxo and sign it with your private key.
 
-## (0) Init Test Environment
+### **1. Init Test Environment**
 
-+ #### generate 200 blocks at node 1
++ #### 1.1. generate 200 blocks at node 1
 
     `~:make generate BLOCKS=200`        
     ==================== State =======================
@@ -35,7 +35,7 @@ The recommendation of the prevoius output.
 
     ================================================
 
-+ #### generate 2 new addresses at node2 and get their private keys
++ #### 1.2. generate 2 new addresses at node2 and get their private keys
 
     ```
     ~:make address2
@@ -63,7 +63,7 @@ The recommendation of the prevoius output.
 
     =================================================
 
-+ #### send 200 btc from node1 to node2
++ #### 1.3. send 200 btc from node1 to node2
 
     send 200 btc to `A1`. 
     ```
@@ -82,11 +82,11 @@ The recommendation of the prevoius output.
 
 
 
-## (2) Create transaction
+### **2. Create transaction**
 
 Create transaction `X` that sends 10 coin to A1 from A2. 
 
-+ #### command
++ #### 2.1 command
 
     ```
     # show utxo
@@ -96,7 +96,7 @@ Create transaction `X` that sends 10 coin to A1 from A2.
     ```
     Here A2 was used to receive change in output, you can also use a new address. 
 
-+ #### create transaction X
++ #### 2.2 create transaction X
 
     ```
     ~:bitcoin-cli -datadir=2 listunspent
@@ -108,17 +108,17 @@ Create transaction `X` that sends 10 coin to A1 from A2.
 
     =================================================
 
-## (3) Use private key 1 to sign X
+### **3. Use private key 1 to sign X**
 
 Sign X and get signed raw transaction X1. 
 
-+ #### command
++ #### 3.1 command
 
     ```
     ~:bitcoin-cli -datadir=2 signrawtransaction x '[]' '["A1_privKey"]'
     ```
 
-+ #### sign X
++ #### 3.2 sign X
 
     generate X1 
 
@@ -131,16 +131,16 @@ Sign X and get signed raw transaction X1.
 
     =================================================
 
-## (4) Boardcast X1 and make record
+### **4. Boardcast X1 and make record**
 
-+ #### command
++ #### 4.1 command
 
     ```
     ~:bitcoin-cli -datadir=2 sendrawtransaction X1 
     ~:make generate BLOCKS=10
     ```
 
-+ #### boardcast and make record
++ #### 4.2 boardcast and make record
 
     ```
     ~:bitcoin-cli -datadir=2 sendrawtransaction <signed_hex>

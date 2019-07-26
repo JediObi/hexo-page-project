@@ -12,19 +12,20 @@ tags:
 
 <!-- more -->
 
-### **Code (1) - install bitcoin**
+## **Code (1) - install bitcoin**
 
-### (1) runtime environment
+### **1. runtime environment**
 
 ```
 ~:sudo apt-get install build-essential libtool autotools-dev autoconf automake libssl-dev libboost-all-dev libdb-dev libdb++-dev pkg-config libevent-dev git-core
 ```
-### (2) clone from git
+
+### **2. clone from git**
 
 ```
 ```
 
-### (3)  compile and install
+### **3.  compile and install**
 
 ```
 ~:cd bitcoin
@@ -38,4 +39,3 @@ tags:
 ~:make -j
 ~:make install
 ```
-

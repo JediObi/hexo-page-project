@@ -15,13 +15,13 @@ tags:
 
 Ubuntu Linux
 
-### (1) g++ work flow
+### **1. g++ work flow**
 
 preprocess->compile->assemble->link
 
-### (2) g++ commands
+### **2. g++ commands**
 
-1. preprocess, usually use .i as file extension for this process.
++ #### 2.1 preprocess, usually use .i as file extension for this process.
 
     ```
     E                          preprocess cpp file, 
@@ -31,7 +31,7 @@ preprocess->compile->assemble->link
     g++ -E helloworld.cpp -o helloworld.i
     ```
 
-2. compile  
++ #### 2.2 compile  
                               
     ```
     S                   preprocess and compile .cpp 
@@ -39,7 +39,7 @@ preprocess->compile->assemble->link
                         finally genearte .s for assemble
     ```
 
-3. assemble
++ #### 2.3 assemble
 
     ```
     c                              preprocess, compile and assemble .cpp  
@@ -48,7 +48,7 @@ preprocess->compile->assemble->link
                                     finally generate .o for link
     ```
 
-4. link
++ #### 2.4 link
 
     ```
                                 preprocess, compile, assemble and link  .cpp  
@@ -62,7 +62,7 @@ preprocess->compile->assemble->link
     g++ helloworld.cpp -o helloworld
     ```
 
-5. others 
++ #### 2.5 others 
 
     ```
     o                       specify target file name 
@@ -71,9 +71,9 @@ preprocess->compile->assemble->link
     ~:g++ helloworld.cpp -o helloworld
     ```
 
-### (3) source code 
+### **3. source code **
 
-helloworld.cpp
+**helloworld.cpp**
 
 ```c++
 #include <iostream>
@@ -85,11 +85,11 @@ int main(){
 }
 ```
 
-### (4) compile and link
+### **4. compile and link**
 
 `~:g++ helloworld.cpp`  
 will generate a.out
 
-### (5) run output 
+### **5. run output **
 `~:./a.out`     
 will print "Hello World!".

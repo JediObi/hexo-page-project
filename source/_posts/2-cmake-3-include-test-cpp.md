@@ -13,11 +13,11 @@ cmake管理cpp文件依赖。
 
 <!-- more -->
 
-### (1) basic `#include "test.cpp"`
+### **1. basic `#include "test.cpp"`**
 
 main()[main.cpp] will use sum()[sum.cpp]
 
-+ tree
++ #### 1.1 tree
 
     ```
     .
@@ -27,7 +27,7 @@ main()[main.cpp] will use sum()[sum.cpp]
     └── sum.cpp
     ```
 
-+ main.cpp
++ #### 1.2 main.cpp
 
     ```cpp
     #include <iostream>
@@ -41,7 +41,7 @@ main()[main.cpp] will use sum()[sum.cpp]
     }
     ```
 
-+ sum.cpp
++ #### 1.3 sum.cpp
 
     ```cpp
     int sum(int a, int b)
@@ -50,7 +50,7 @@ main()[main.cpp] will use sum()[sum.cpp]
     }
     ```
 
-+ g++
++ #### 1.4 g++
 
     ```
     ~:g++ main.cpp
@@ -58,27 +58,28 @@ main()[main.cpp] will use sum()[sum.cpp]
     3
     ```
 
-+ cmake
++ #### 1.5 cmake
 
-    1) CMakeLists.txt
+    + ##### 1.5.1 CMakeLists.txt
 
-    ```cmake
-    cmake_minimum_required(VERSION 3.10)
-    set(CMAKE_CXX_STANDARD 11)
-    project(test)
-    message(status "project: test")
-    message(status "project directory: ${PROJECT_SOURCE_DIR}")
-    set(CMAKE_BUILD_TYPE debug)
-    set(CMAKE_C_FLAGS_DEBUG "-g -Wall")
-    add_executable(main main.cpp)
-    ```
+        ```cmake
+        cmake_minimum_required(VERSION 3.10)
+        set(CMAKE_CXX_STANDARD 11)
+        project(test)
+        message(status "project: test")
+        message(status "project directory: ${PROJECT_SOURCE_DIR}")
+        set(CMAKE_BUILD_TYPE debug)
+        set(CMAKE_C_FLAGS_DEBUG "-g -Wall")
+        add_executable(main main.cpp)
+        ```
 
-    2) build
-    ```
-    ~:cd build
-    ~:rm -rf *
-    ~:cmake ..
-    ~:make
-    ~:./main
-    3
-    ```
+    + ##### 1.5.2 build
+  
+        ```
+        ~:cd build
+        ~:rm -rf *
+        ~:cmake ..
+        ~:make
+        ~:./main
+        3
+        ```

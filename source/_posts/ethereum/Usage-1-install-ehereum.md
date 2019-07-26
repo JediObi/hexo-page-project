@@ -12,7 +12,7 @@ tags:
 
 <!-- more -->
 
-## (1) install go client - geth
+### **1. install go client - geth**
 
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
@@ -22,7 +22,7 @@ sudo apt-get install ethereum
 sudo apt-get install solc
 ```
 
-## (2) start with testnet
+### **2. start with testnet**
 
 Use rinkeby testnet.        
 About 7.6G until 2018-05-25.
@@ -30,4 +30,4 @@ About 7.6G until 2018-05-25.
 ~:geth --rinkeby
 ```
 
-## (3) how to use rinkeby and test develop on it.
+### **3. how to use rinkeby and test develop on it.**

@@ -19,7 +19,7 @@ tags:
 tx_a hash code is tx_a_hash 
 tx_b hash code is tx_b_hash 
 
-+ #### tx_a  
++ #### 1. tx_a  
 
     tx_a_hash 
     ```shell
@@ -33,7 +33,7 @@ tx_b hash code is tx_b_hash
     scriptPubKey: OP_DUP OP_HASH160 <user_b_wallet_pub_key_hash> OP_EQUALVERIFY OP_CHECKSIG
     ```
 
-+ #### tx_b  
++ #### 2. tx_b  
 
     tx_b_hash 
     ```shell

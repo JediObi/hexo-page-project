@@ -3,7 +3,7 @@ title: 3 - avd error
 copyright: true
 date: 2019-07-26 16:38:06
 categories:
-    - Android natvie
+    - Android native
 tags:
     - Android
     - avd

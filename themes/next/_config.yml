@@ -39,8 +39,8 @@ custom_file_path:
 favicon:
   small: /images/koala_16_16.png
   medium: /images/koala_32_32.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  apple_touch_icon: /images/koala_avatar.png
+  safari_pinned_tab: /images/koala_avatar.png
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 

@@ -10,4 +10,7 @@ tags:
 ---
 
 在jsx里属性都被变成了对象，所以style应该被赋予一个对象。
+
+```js
 style={{width:"100px",height:"100px",}}
+```

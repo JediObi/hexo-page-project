@@ -8,7 +8,7 @@ tags:
     - python
     - machine learning
 ---
-从感知机到神经网络的训练方式总结。
+激活函数的变化，从阶跃函数到logistic。
 
 <!-- more -->
 

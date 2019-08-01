@@ -13,7 +13,7 @@ numpy 常用的一些接口
 
 <!-- more -->
 
-### **1. random **
+### **1. random**
 
 + #### 1.1 np.random.rand(d0,d1,d2...)
 

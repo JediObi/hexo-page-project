@@ -13,7 +13,7 @@ matplotlib 常用api
 
 <!-- more -->
 
-### **1. 点图 plot()
+### **1. 点图 plot()**
 
 ```python
 x = [1,2,3]

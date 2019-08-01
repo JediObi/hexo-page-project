@@ -62,6 +62,7 @@ plt.show()
 
 + #### 4.2 刻度替换
 
+    像np.pi这样的数值可以替换为圆周率符号更为直观       
     此处替换为 LaTex
     ```python
     x = np.linspace(-np.pi, np.pi, 256,endpoint=True)
@@ -84,7 +85,7 @@ plt.ylim(-1.0, 1.0)
 ### **6. 线条颜色, 粗细, 样式**
 
 ```python
-# 可以简写颜色和样式, 比如bo 表示蓝色blue和实心圆样式, 样式还有很多可以取查表
+# 可以简写颜色和样式, 比如bo 表示蓝色blue和实心圆样式, 样式还有很多可以查表
 plot(x, y, color="blue", linewidth=2.5, linestyle="-")
 ```
 

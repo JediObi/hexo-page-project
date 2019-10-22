@@ -258,9 +258,24 @@ tags:
     **Note:** maybe you need to reboot system or you can't tab for numix-icon-theme-circle
     `~:sudo apt-get install numix-icon-theme-circle`
 
+    If ppa is not available,
+    install manually:
+    ```
+    ~:git clone https://github.com/JediObi/numix-icon-theme-circle.git
+    ~:sudo cp -r Numix-Circle /usr/share/icons
+    ```
+
 + ##### 3. install arc--theme
 
     `~:sudo apt-get install arc-theme`
+
+    install manually:
+    ```
+    ~:git clone https://github.com/JediObi/arc-theme.git
+    ~:./autogen.sh --prefix=/usr
+    ~:sudo make install
+    ```
+    more info on github.
 
 + ##### 4. install  papirus-icon-theme
 
@@ -268,6 +283,13 @@ tags:
     sudo add-apt-repository ppa:papirus/papirus
     sudo apt-get update
     sudo apt-get install papirus-icon-theme
+    ```
+
+    If ppa is not available,
+    install manually:
+    ```
+    ~:git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+    ~:sudo cp -r Papirus-Dark /usr/share/icons
     ```
 
 #### **2.5 lantern**

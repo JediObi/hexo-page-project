@@ -1,6 +1,7 @@
 jediobi的github博客源码
 使用nodejs的hexo框架搭建，新建文章和发布都在这个项目里做。
 github的博客地址 https://jediobi.github.io
+
 使用 ```Hexo``` 管理文章
 
 (1) node环境

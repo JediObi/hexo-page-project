@@ -18,3 +18,5 @@ root用户可以直接登录。或者按照/etc/mysql/debian.cnf里的用户名�
 ```
 update mysql.user set authentication_string=password('123'), plugin='mysql_native_password' where user='root';
 ```
+
+restart mysql.service

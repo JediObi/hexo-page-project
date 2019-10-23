@@ -263,11 +263,18 @@ tags:
     icons:
     ```
     # folder icons soft link source
-    ~:git clone https://github.com/JediObi/numix-icon-theme.git
+    ~:git clone https://github.com/numixproject/numix-icon-theme.git
     ~:sudo cp -r numix-icon-theme/Numix /usrshar/icons
-    ~:git clone https://github.com/JediObi/numix-icon-theme-circle.git
+    ~:git clone https://github.com/numixproject/numix-icon-theme-circle.git
     ~:sudo cp -r numix-icon-theme-circle/Numix-Circle /usr/share/icons
     ```
+    change folder icon color
+    ```
+    ~:~:git clone https://github.com/numixproject/numix-folders.git
+    ~:cd numix-folders
+    ~:sudo ./numix-folders
+    ```
+    You can config colors yourself in README.MD
 
 + ##### 3. install arc--theme
 
@@ -275,7 +282,7 @@ tags:
 
     install manually:
     ```
-    ~:git clone https://github.com/JediObi/arc-theme.git
+    ~:git clone https://github.com/horst3180/arc-theme.git
     ~:./autogen.sh --prefix=/usr
     ~:sudo make install
     ```

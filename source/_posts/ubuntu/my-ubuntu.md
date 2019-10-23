@@ -260,9 +260,13 @@ tags:
 
     If ppa is not available,
     install manually:
+    icons:
     ```
+    # folder icons soft link source
+    ~:git clone https://github.com/JediObi/numix-icon-theme.git
+    ~:sudo cp -r numix-icon-theme/Numix /usrshar/icons
     ~:git clone https://github.com/JediObi/numix-icon-theme-circle.git
-    ~:sudo cp -r Numix-Circle /usr/share/icons
+    ~:sudo cp -r numix-icon-theme-circle/Numix-Circle /usr/share/icons
     ```
 
 + ##### 3. install arc--theme

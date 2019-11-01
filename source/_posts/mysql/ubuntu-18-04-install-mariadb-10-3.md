@@ -22,7 +22,7 @@ Here are some error dealing.
 ### **1. `Plugin 'unix_socket' is not loaded.`**
 
 ```
-~:systemctl stop mysql
+~:systemctl start mariadb
 ~:sudo mysqld_safe --skip-grant-tables &
 ~:mysql -u root
 ~:select host,user,plugin from mysql.user where user='root';

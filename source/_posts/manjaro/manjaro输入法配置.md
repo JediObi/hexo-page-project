@@ -1,5 +1,5 @@
 ---
-title: Mariadb 安装
+title: Manjaro输入法配置
 copyright: true
 date: 2019-07-29 11:31:43
 categories:

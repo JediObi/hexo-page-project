@@ -82,11 +82,6 @@ module.exports = {
         path: path.resolve(__dirname, 'build/static/js'),
         filename: 'bundle.js'
     },
-    module: {
-        loaders: [
-            { test: /\.css$/, loader: "style-loader!css-loader" }
-        ]
-    },
     plugins:[
         new HtmlWebpackPlugin({
             inject: true, 

@@ -12,22 +12,9 @@ tags:
 ---
 react 快速开始    
 使用webpack启动本地调试服务。在没有webpack这类工具之前，需要集成单独的服务器中间件部署静态资源，比如tomcat或者其他的node的服务器中间件。
+webpack4
 
 <!-- more -->
-
-## **(4) quick start (4) webpack-dev-server**
-
-
-+ ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
-+ ### [quick start (2) webpack config to compile javascript](https://www.jianshu.com/p/71e4b19c1264)
-+ ### [quick start (3) html pages with javascript](https://www.jianshu.com/p/8e2656d51037)
-+ ### quick start (4) webpack-dev-server
-+ ### [quick start (5) css](https://www.jianshu.com/p/e98d4c4d34cf)
-+ ### [quick start (6) react](https://www.jianshu.com/p/9b31cb59ecb5)
-+ ### [quick start (7) images and url loader](https://www.jianshu.com/p/30cf1c8bb2b1)
-+ ### [quick start (8) loaders and hash](https://www.jianshu.com/p/64fe50f2d3ad)
-+ ### [quick start (9) a project of react](https://www.jianshu.com/p/395b299fa8f0)
-+ ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 The following steps will lead you create http server for development.
 Here we use `webpack-dev-server` to build it for `Hot Module Replacement` and `automatic refresh`.
@@ -45,11 +32,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build/static/js'),
         filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            { test: /\.css$/, loader: "style-loader!css-loader" }
-        ]
     },
     plugins:[
         new HtmlWebpackPlugin({
@@ -86,27 +68,30 @@ module.exports = {
 + #### 2.1 package.json
     ```json
     {
-    "name": "lesson1",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server",
-        "build": "webpack"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "html-webpack-plugin": "^2.30.1",
-        "webpack": "^3.10.0",
-        "webpack-dev-server": "^2.9.7"
-    }
+        "name": "lesson1",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "start": "webpack-dev-server",
+            "build": "webpack"
+        },
+        "author": "",
+        "license": "ISC",
+        "devDependencies": {
+            "html-webpack-plugin": "^3.2.0",
+            "webpack": "^4.41.2",
+            "webpack-cli": "^3.3.10",
+            "webpack-dev-server": "^3.9.0"
+        }
     }
     ```
     `~:npm start`
 
 ### **3. Javascripts haven't been injected.**
+
+Error: Javascripts haven't been injected. 
 
 ### **4. multiple webpack config files**
 
@@ -128,11 +113,6 @@ Now we create a new config file for webpack-dev-server so solve the injection pr
             path: path.resolve(__dirname, 'build/static/js'),
             filename: 'bundle.js'
         },
-        module: {
-            loaders: [
-                { test: /\.css$/, loader: "style-loader!css-loader" }
-            ]
-        },
         plugins:[
             new HtmlWebpackPlugin({
                 inject: true, //inject all js at the bottom of the body
@@ -151,22 +131,23 @@ Now we create a new config file for webpack-dev-server so solve the injection pr
   
     ```json
     {
-    "name": "lesson1",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack",
-        "start": "webpack-dev-server --config webpack.config.dev.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "html-webpack-plugin": "^2.30.1",
-        "webpack": "^3.10.0",
-        "webpack-dev-server": "^2.9.7"
-    }
+        "name": "lesson1",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1",
+            "build": "webpack",
+            "start": "webpack-dev-server --config webpack.config.dev.js"
+        },
+        "author": "",
+        "license": "ISC",
+        "devDependencies": {
+            "html-webpack-plugin": "^3.2.0",
+            "webpack": "^4.41.2",
+            "webpack-cli": "^3.3.10",
+            "webpack-dev-server": "^3.9.0"
+        }
     }
     ```
     `~:npm start`

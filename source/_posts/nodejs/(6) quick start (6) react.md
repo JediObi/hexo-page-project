@@ -15,20 +15,6 @@ webpack引入css插件处理css文件，webpack要处理的所有文件都是资
 
 <!-- more -->
 
-## **(6) quick start (6) react**
-
-
-+ ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
-+ ### [quick start (2) webpack config to compile javascript](https://www.jianshu.com/p/71e4b19c1264)
-+ ### [quick start (3) html pages with javascript](https://www.jianshu.com/p/8e2656d51037)
-+ ### [quick start (4) webpack-dev-server](https://www.jianshu.com/p/58dd29b62500)
-+ ### [quick start (5) css](https://www.jianshu.com/p/e98d4c4d34cf)
-+ ### quick start (6) react
-+ ### [quick start (7) images and url loader](https://www.jianshu.com/p/30cf1c8bb2b1)
-+ ### [quick start (8) loaders and hash](https://www.jianshu.com/p/64fe50f2d3ad)
-+ ### [quick start (9) a project of react](https://www.jianshu.com/p/395b299fa8f0)
-+ ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
-
 ### **1. install modules**
 
 + #### 1.1 react

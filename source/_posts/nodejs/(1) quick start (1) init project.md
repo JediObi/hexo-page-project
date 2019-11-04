@@ -12,22 +12,9 @@ tags:
 ---
 react 快速开始    
 初始化项目
+webpack4
 
 <!-- more -->
-
-## **(1) quick start (1) init project**
-
-
-+ ### quick start (1) init project
-+ ### [quick start (2) webpack config to compile javascript](https://www.jianshu.com/p/71e4b19c1264)
-+ ### [quick start (3) html pages with javascript](https://jediobi.github.io/2019/07/23/nodejs/(2)%20quick%20start%20(2)%20webpack%20config%20to%20compile%20javascript/)
-+ ### [quick start (4) webpack-dev-server](https://www.jianshu.com/p/58dd29b62500)
-+ ### [quick start (5) css](https://www.jianshu.com/p/e98d4c4d34cf)
-+ ### [quick start (6) react](https://www.jianshu.com/p/9b31cb59ecb5)
-+ ### [quick start (7) images and url loader](https://www.jianshu.com/p/30cf1c8bb2b1)
-+ ### [quick start (8) loaders and hash](https://www.jianshu.com/p/64fe50f2d3ad)
-+ ### [quick start (9) a project of react](https://www.jianshu.com/p/395b299fa8f0)
-+ ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 the following steps will lead you create a new node project.
 the final tree
@@ -67,6 +54,7 @@ the final tree
   
   ```
   ~:npm install --save-dev webpack
+  ~:npm install --save-dev webpack-cli
   ```
 
 + #### 1.3 package.json
@@ -83,7 +71,8 @@ the final tree
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "webpack": "^3.10.0"
+      "webpack": "^4.41.2",
+      "webpack-cli": "^3.3.10"
     }
   }
   ```
@@ -92,7 +81,8 @@ the final tree
     
   ```json
   "devDependencies": {
-      "webpack": "^3.10.0"
+      "webpack": "^4.41.2",
+      "webpack-cli": "^3.3.10"
   }
   ```
   `--save`: if we don't use this command, we have to add the dependencies manually. This command will add packages to `dependencies`.

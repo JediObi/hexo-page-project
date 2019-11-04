@@ -11,22 +11,9 @@ tags:
 ---
 react 快速开始    
 对于webpack来说，html也是资源文件的一种，需要为webpack引入相关插件，webpack才会识别html，并且可以在编译时注入相关的js
+webpack4
 
 <!-- more -->
-
-## **(3) quick start (3) html pages with javascript**
-
-
-+ ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
-+ ### [quick start (2) webpack config to compile javascript](https://www.jianshu.com/p/71e4b19c1264)
-+ ### quick start (3) html pages with javascript
-+ ### [quick start (4) webpack-dev-server](https://www.jianshu.com/p/58dd29b62500)
-+ ### [quick start (5) css](https://www.jianshu.com/p/e98d4c4d34cf)
-+ ### [quick start (6) react](https://www.jianshu.com/p/9b31cb59ecb5)
-+ ### [quick start (7) images and url loader](https://www.jianshu.com/p/30cf1c8bb2b1)
-+ ### [quick start (8) loaders and hash](https://www.jianshu.com/p/64fe50f2d3ad)
-+ ### [quick start (9) a project of react](https://www.jianshu.com/p/395b299fa8f0)
-+ ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 The following steps will show you how to use webpack to compile html pages.
 We have built `bundle.js` in [quick start (2) webpack config](/p/71e4b19c1264), now we use it in html pages.
@@ -47,7 +34,7 @@ The final tree without node_modules:
 ### **1. install html-webpack-plugin**
 
 This plugin will use your html pages source files as templates to create pages in buiding step.
-`~:npm install --save-dev html-build-plugin`
+`~:npm install --save-dev html-webpack-plugin`
 
 ### **2. code sources**
 

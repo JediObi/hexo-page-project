@@ -12,22 +12,10 @@ tags:
 ---
 react 快速开始    
 使用webpack编译和打包项目
+webpack4
 
 <!-- more -->
 
-## **(2) quick start (2) webpack config to compile javascript**
-
-
-+ ### [quick start (1) init project](https://www.jianshu.com/p/b5df2e74aa20)
-+ ### quick start (2) webpack config to compile javascript
-+ ### [quick start (3) html pages with javascript](https://www.jianshu.com/p/8e2656d51037)
-+ ### [quick start (4) webpack-dev-server](https://www.jianshu.com/p/58dd29b62500)
-+ ### [quick start (5) css](https://www.jianshu.com/p/e98d4c4d34cf)
-+ ### [quick start (6) react](https://www.jianshu.com/p/9b31cb59ecb5)
-+ ### [quick start (7) images and url loader](https://www.jianshu.com/p/30cf1c8bb2b1)
-+ ### [quick start (8) loaders and hash](https://www.jianshu.com/p/64fe50f2d3ad)
-+ ### [quick start (9) a project of react](https://www.jianshu.com/p/395b299fa8f0)
-+ ### [react-helmet customize html head](https://www.jianshu.com/p/97ced0c8f891)
 
 The following steps will show you how to use webpack.
 We will configure `webpack.config.js` and compile source files to build the project. 
@@ -61,6 +49,7 @@ We did [init project](p/b5df2e74aa20) and installed `webpack`.
 + ##### 1.2.1 install global
   
   `~:npm install -g webpack`
+  `~:npm install -g webpack-cli`
 
 + ##### 1.2.2 use webpack to compile
   
@@ -74,7 +63,7 @@ We did [init project](p/b5df2e74aa20) and installed `webpack`.
 We have too many compiling ruls with different source files and options.
 So we have to simplify the webpack command rule.
 
-And then we can just use `~:webpack` to instead of `~:webpack abc.js bundle.js`.
+And then we can just use `~:webpack` to instead of `~:webpack src/abc.js -o build/static/bundle.js`.
 
 Put all webpack compiling rule in config file:
 
@@ -85,7 +74,7 @@ Put all webpack compiling rule in config file:
 
   module.exports = {
       entry: [
-          './index.js'
+          './src/index.js'
       ],
       output: {
           path: path.resolve(__dirname, 'build/static/js'),
@@ -93,6 +82,7 @@ Put all webpack compiling rule in config file:
       }
   }
   ```
+  `__dirname`: is a environment variable of node, value is the project folder path.
   `entry`: webpack will analyze your entry file for dependencies to other files. These files (called modules) are included in your bundle.js too. webpack will give each module a unique id and save all modules accessible by id in the bundle.js file. Only the entry module is executed on startup. A small runtime provides the require function and executes the dependencies when required.
   `output`: webpack will create lesson1/build/bundle.js. All modules will be included in this file.
 
@@ -113,9 +103,9 @@ Put all webpack compiling rule in config file:
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "html-webpack-plugin": "^2.30.1",
-      "webpack": "^3.10.0",
-      "webpack-dev-server": "^2.9.7"
+      "html-webpack-plugin": "^3.2.0",
+      "webpack": "^4.41.2",
+      "webpack-cli": "^3.3.10"
     }
   }
   ```

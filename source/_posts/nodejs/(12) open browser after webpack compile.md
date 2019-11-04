@@ -81,7 +81,7 @@ npm start调用的是webpack的插件，为webpack安装相关插件，可以在
                 template: path.resolve(__dirname, 'public/index.html'), //source file
             }),
             new OpenBrowserPlugin({
-                url: 'http:localhost:'+host_port,
+                url: 'http://localhost:'+host_port,
             }),
         ],
         devServer: {

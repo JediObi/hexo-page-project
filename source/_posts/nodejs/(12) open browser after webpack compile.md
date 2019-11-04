@@ -12,22 +12,18 @@ tags:
 ---
 调试服务器启动后自动打开浏览器展示首页。        
 npm start调用的是webpack的插件，为webpack安装相关插件，可以在服务启动后自动打开指定浏览器访问指定的页面。
+webpack4
 
 <!-- more -->
 
 ## **(12) open browser after webpack compile**
 
 
-+ use plugin `open-browser-webpack-plugin`
-+ install
-`~:npm install --save-dev open-browser-webpack-plugin`
-
 + webpack.config.dev.js
 
     ```js
     const path = require('path');
     const HtmlWebpackPlugin = require('html-webpack-plugin');
-    const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
     const host_port = 3000;
 
@@ -80,9 +76,6 @@ npm start调用的是webpack的插件，为webpack安装相关插件，可以在
                 inject: true, //inject all js at the bottom of the body
                 template: path.resolve(__dirname, 'public/index.html'), //source file
             }),
-            new OpenBrowserPlugin({
-                url: 'http://localhost:'+host_port,
-            }),
         ],
         devServer: {
             contentBase: path.resolve(__dirname, 'public'),
@@ -97,7 +90,7 @@ npm start调用的是webpack的插件，为webpack安装相关插件，可以在
 
     ```json
     "scripts": {
-        "start": "webpack-dev-server --config webpack.config.dev.js"
+        "start": "webpack-dev-server --config webpack.config.dev.js --open"
     },
     ```
 

@@ -85,6 +85,6 @@ the final tree
       "webpack-cli": "^3.3.10"
   }
   ```
-  `--save`: if we don't use this command, we have to add the dependencies manually. This command will add packages to `dependencies`.
-  `--save-dev`: it's similar to `--save`, but it will add packages to `devDependencies`.
+  `--save or -S`: if we don't use this command, we have to add the dependencies manually. This command will add packages to `dependencies`.
+  `--save-dev or -D`: it's similar to `--save`, but it will add packages to `devDependencies`.
   dev means we just use these packages in development, and in our final product, some of the packages we don't need such like webpack, and some will be compiled into a more advanced file such like jQuery. 

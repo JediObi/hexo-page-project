@@ -29,6 +29,10 @@ github的博客地址 https://jediobi.github.io
 ```
 以上命令会在 ```source/_posts``` 目录下产生一个 ```article_name.md``` 文件
 
+为了方便管理，文章应该被放到特定分类文件夹中，并且，应该为文章分类（categories），并打标签。
+
+新建分类文件夹时，应该使用在 source/_posts 目录下新建
+
 文章模板说明
 ```
 ---
@@ -38,7 +42,7 @@ copyright: ture
 categories:
     -
 tags:
-    -mysql
+    - mysql
 ---
 摘要
 

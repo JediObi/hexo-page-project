@@ -117,6 +117,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     compile 'org.ehcache:ehcache:3.8.1'
     compile project(":common:dao")
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }
 ```
 
@@ -129,7 +131,7 @@ dependencies {
 //    compile group: 'org.springframework', name: 'spring-core'
 //    compile group: 'org.springframework', name: 'spring-beans'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compile 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }
 ```
@@ -144,5 +146,6 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 }
-
 ```
+
+注意lombok的传递依赖问题， 本文使用lombok的方式，即使把 compileOnly改为 compile 也会导致编译时lombok不识别的问题，所以每个用到lombok的模块单独引入，最好的方式还是手写get/set等方法。

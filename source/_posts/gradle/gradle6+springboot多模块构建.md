@@ -1,9 +1,12 @@
 ---
-title: gradle-6填坑
+title: gradle6+springboot多模块构建
 copyright: true
 date: 2019-12-16 16:09:48
 categories:
+    - gradle
 tags:
+    - gradle
+    - spring
 ---
 
 gradle 6.0.1

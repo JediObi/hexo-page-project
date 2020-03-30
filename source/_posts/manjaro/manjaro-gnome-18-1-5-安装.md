@@ -3,7 +3,9 @@ title: manjaro-gnome-18.1.5-安装
 copyright: true
 date: 2020-02-03 04:19:12
 categories:
+    - manjaro
 tags:
+    - manjaro
 ---
 manjaro gnome 18.1.5 u盘安装单系统，或与win10构成双系统
 

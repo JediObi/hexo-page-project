@@ -23,3 +23,6 @@ manjaro基于arch，所以带有滚动更新。频繁的滚动更新会导致某
 有时，需要更新系统时发现 pip无法使用了，比如代码错误，import错误等等，这通常是因为某些python包版本变化导致，或python版本变化导致。
 比如pip的安装包名从 pip 变成了python-pip，python从3.7变成了3.8。
 如果你不会修改pip的python依赖，那么就先更新系统。一般在更新完系统之后pip的依赖会自动更新完成。
+
+如果需要自行修改源代码并重新运用到 site-pakcages，可以通过clone源码的方式，需要编辑setup.py。
+安装命令 pip install -e 或者 python setup.py develop ，这两个方式用于开发调试会很快捷。去掉 -e或者develop通常就是安装那些代码固定不变，不需要调试的模块。

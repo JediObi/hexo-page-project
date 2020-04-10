@@ -45,7 +45,7 @@ raw，其他格式导致 uefi 下无法从u盘启动。
 
 手动分区
 
-1G, primary, file-system: fat32, mount point: boot-efi, flag: boot, bios-grub
+1G, primary, file-system: fat32, mount point: boot-efi, flag: boot, esp
 
 8G, primary, file-system: linux-swap, mount point: , flag: swap
 

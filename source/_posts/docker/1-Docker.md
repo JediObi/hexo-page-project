@@ -42,6 +42,16 @@ docker的安装配置。
     ```
     run `ubuntu:15.10` and use `/bin/echo` to print "Hello world".
 
+    命令格式：docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+    run 命令使用镜像创建容器实例并启动，COMMAND ARGS... 表示任务和任务参数， run命令必须指定任务，但是任务可以在 dockerfile的 Cmd节点配置，所以命令行里是一个可选参数。
+
+    `docker inspect name` 可以查看 dockerfile。
+
+    任务中的前台任务决定了容器的运行时间。docker的机制是如果没有任何前台任务，则认为容器空闲，容器会自动exit。所以对于一些service类型的任务可能需要改到前台执行。
+
+    自定义容器时，一般用一个空的Linux镜像，没有指定任务，为了保持容器运行，一般会指定 /bin/bash, 然后使用 -t 创建一个终端使之在前台运行，但是终端的exit命令会退出终端导致前台任务结束，容器也就停止了。所以要增加一个 -d 守护进程，退出或在后台可以继续保持前台任务执行。 -i 参数可以连接到容器的标准输入，标准输入也是一个前台任务(使用ctrl+c会退出stdin)，一般不单独用。
+
 + #### 3.2 ps
 
     ```
@@ -112,13 +122,14 @@ docker的安装配置。
     ~:docker commit -m="commit info" -a="author name" [container_id] [target repository name like 'repository_name:tag']
     ```
     save your changes in this container by create a new container.
+    一般用于自定义容器，对一个容器实例做的任何修改保存为一个新的image。
 
 + #### 3.12 tag
 
     ```
-    ~:docker tag [container_id] [repository_name:tag]
+    ~:docker tag [repo[:tag]] [repository_name:tag]
     ```
-    create a new container by new tag.
+    使用已有镜像创建一个自定义镜像，一般是使用别人的镜像 tag 出一个自己的初始镜像，然后改造。
 
 ### **4. docker arguments**
 
@@ -138,7 +149,7 @@ run --name     docker run --name [name] {} {} --> run a container and make a nam
 ```
 open the same terminal of a container.
 
-### **6. ```exec``` execute another terminal**
+### **6. `exec` execute another terminal**
 
 ```
 ~:docker exec -it <container_id> bash

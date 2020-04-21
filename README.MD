@@ -61,3 +61,20 @@ test
 ~:hexo g
 ~:hexo d
 ```
+
+(6) 本地调试
+
+```
+~:hexo server
+```
+
+(7) 常见错误
+
+hexo g 生成报错
+```
+Error: connect ECONNRESET
+```
+可能是hexo-server模块缺失，需要手动安装该模块
+```
+~:npm i hexo-server --save
+```

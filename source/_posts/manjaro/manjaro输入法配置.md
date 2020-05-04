@@ -18,8 +18,10 @@ tags:
 截止 2019-11-01 Manjaro 18.1.2， 使用 fcitx 5 即可。        
 但是有多种不同的实现，此处使用 qt的实现
 ```
-~:sudo pacman -S fcitx-qt4 fcitx-qt5 fcitx-configtool fcitx-sogoupinyin
+~:sudo pacman -S fcitx-im fcitx-configtool fcitx-sogoupinyin
 ```
+`fcitx-im` 
+
 ** `fcitx-configtool` 是 fcitx 的配置界面
 
 ### **2. 应用输入法**

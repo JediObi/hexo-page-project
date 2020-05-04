@@ -342,8 +342,11 @@ tags:
     ~:git clone https://github.com/philc/vimium.git
     ~:sudo npm install -g coffeescript@1.12.7
     ~:cd vimium
-    ~:cafe build
+    # 2020-04-04 更新,构建脚本已经改变,依托与coffeescirpt 1.x, 然后直接使用目录中的js脚本构建
+    # ~:cake build
+    ~:./make.js build
     ```
+    chrome浏览器开启开发者模式,然后把 build过的 vimium文件夹打包成插件,然后拖动到chrome里安装.
     chrome developer mode **==>** package the directory into an extension and install 
     **<==**
 

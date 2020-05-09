@@ -131,16 +131,19 @@ docker的安装配置。
     ```
     使用已有镜像创建一个自定义镜像，一般是使用别人的镜像 tag 出一个自己的初始镜像，然后改造。
 
-### **4. docker arguments**
+### **4. docker run命令补充**
 
 ```
 -t    create a terminal in the container
 -i     open stdin
 -d    container work in background
--p    docker run -p 5000:5000 {} {} --> mapping container port to specified host port.
--P   docker run -P {} {} --> mapping container port to random host port.
+-p    端口映射，docker run -p 5000:5000 {} {} --> mapping container port to specified host port.
+-P   随机端口映射，docker run -P {} {} --> mapping container port to random host port.
 run --name     docker run --name [name] {} {} --> run a container and make a name for it.
 ```
+`-p` 指定端口映射，格式 [宿主机ip:][宿主机端口:]容器端口，除了容器端口是必须参数，其他两个可以不指定。宿主机一般有多个ip，比如多网卡设备，默认为空表示使用所有宿主机ip，宿主机端口不指定时将会做随机映射。
+
+`-P` 为dockerfile的EXPOSE或 参数中指定的端口做随机映射。
 
 ### **5. `attach` the same docker terminal**
 
@@ -155,3 +158,25 @@ open the same terminal of a container.
 ~:docker exec -it <container_id> bash
 ```
 open a new terminal of a docker container.
+
+### **7. 轻量级linux镜像 alpine**
+
+### **8. 其他命令**
+
++ 查看容器或镜像的dockerfile
+
+    `docker inspect [name/id]`
+
++ 查看所有网卡
+
+    `docker network ls`
+
++ 查看网卡配置，比如bridge
+
+    `docker network inspect bridge`
+
+### **9. 注意**
+
+禁止套娃：容器不能二次虚拟化，所以在容器中无法再次启动docker容器。如果有这种特殊的需求，可以使用 docker in docker 镜像，对应的仓库是 docker-dind
+
+

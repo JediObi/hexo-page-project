@@ -36,3 +36,20 @@ dockerfile里创建volume
 bind mount 是挂载宿主机物理路径的方式，适用于测试环境，配置简单，但由于绑定了真实路径导致无法移植，不能在dockerfile里用这种方式。
 
 在 run命令里 使用绝对路径表示挂载卷就是以bind mount的方式绑定了宿主机上的真实路径。
+
+druid log4j 日志开关
+ <!-- 上面的druid的配置 -->
+    <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4j2Filter">
+        <!-- 所有连接相关的日志 -->
+        <property name="connectionLogEnabled" value="false"/>
+        <!-- 所有Statement相关的日志 -->
+        <property name="statementLogEnabled" value="false"/>
+        <!-- 是否显示结果集 -->
+        <property name="resultSetLogEnabled" value="true"/>
+        <!-- 是否显示SQL语句 -->
+        <property name="statementExecutableSqlLogEnable" value="true"/>
+    </bean>
+
+web-stat-filter 用于采集数据web接口关联的jdbc监控数据
+
+stat-view-servlet 用于展示监控数据的servlet提供ui界面。

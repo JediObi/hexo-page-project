@@ -2,6 +2,7 @@
 title: {{ title }}
 date: {{ date }}
 copyright: true
+mathjax: false
 categories:
 tags:
 ---

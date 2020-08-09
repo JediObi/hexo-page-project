@@ -3,7 +3,10 @@ title: docker数据持久化
 copyright: true
 date: 2020-06-17 06:38:51
 categories:
+    - docker
 tags:
+    - docker
+    - mysql
 ---
 docker容器是无状态的，所有的写入如果不做持久化，容器删除时，写入的数据也会删除。
 本文容器数据持久化常用的两种方式，volume方式和bind mount方式。
@@ -38,6 +41,7 @@ bind mount 是挂载宿主机物理路径的方式，适用于测试环境，配
 在 run命令里 使用绝对路径表示挂载卷就是以bind mount的方式绑定了宿主机上的真实路径。
 
 druid log4j 日志开关
+```xml
  <!-- 上面的druid的配置 -->
     <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4j2Filter">
         <!-- 所有连接相关的日志 -->
@@ -49,7 +53,7 @@ druid log4j 日志开关
         <!-- 是否显示SQL语句 -->
         <property name="statementExecutableSqlLogEnable" value="true"/>
     </bean>
+```
+`web-stat-filter` 用于采集数据web接口关联的jdbc监控数据
 
-web-stat-filter 用于采集数据web接口关联的jdbc监控数据
-
-stat-view-servlet 用于展示监控数据的servlet提供ui界面。
+`stat-view-servlet` 用于展示监控数据的servlet提供ui界面。

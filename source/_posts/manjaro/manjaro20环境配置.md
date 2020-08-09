@@ -346,10 +346,10 @@ tensorflow-2.3.0 支持cuda10.1和cudnn7，在nvidia相关配置里会说明。
 
 ### 5.3 nvidia驱动和cuda
 
-manjaro20的软件仓库已经把cuda更新到了10.2，cudnn-8，所以tensorflow无法使用GPU，目前仓库没有降级版本，只能从nvidia官网下载指定版本，速度还很快的。
+manjaro20的软件仓库已经把cuda更新到了10.2，cudnn-8，需要自行下载安装cuda10.1和cudnn7，否则tensorflow无法使用GPU，目前仓库没有降级版本，只能从nvidia官网下载指定版本，不用担心，下载速度还是很快的。
 
 cuda `https://developer.nvidia.com/cuda-downloads` 选择`Legacy Releases`会跳转到其他版本选择页，选择10.1最新的版本是update2，系统是Linux-Unbuntu-18.04-runfile(local)，这是个run文件，arch也可以使用的。
-下载完成后，执行`sudo sh cuda_10.1.243_418.87.00_linux.run`安装，会跳出选择界面，注意cuda10.1需要nvidia驱动418，高于这个版本需要先降级。之后应该会安装成功，但是cuda相关的命令比如nvcc还不能用，按照安装完成的提示，把cuda的bin目录添加到path即可。至于library路径，已经自动添加到/etc/ld.so.conf，后边添加cudnn到cuda时，需要`sudo ldconfig`来更新下。
+下载完成后，执行`sudo sh cuda_10.1.243_418.87.00_linux.run`安装，会跳出选择界面让你选择各种配置其中包括nvidia驱动，取消驱动勾选因为我们自行安装驱动，注意cuda10.1需要nvidia驱动418（可以在manjaro硬件设置里安装），高于这个版本需要先降级。之后应该会安装成功，但是cuda相关的命令比如nvcc还不能用，按照安装完成的提示，把cuda的bin目录添加到path即可。至于library路径，已经自动添加到/etc/ld.so.conf，后边添加cudnn到cuda时，需要`sudo ldconfig`来更新下library。
 ```
 ```
 cudnn，链接地址 `https://developer.nvidia.com/cudnn`，需要登录之后才能选择下载，在下载页选择`Archived cuDNN Releases`才能展示出旧版本，然后选择for cuda10.1，之后直接选择`cuDNN Library for Linux`，这是个压缩包，需要手动解压和配置。

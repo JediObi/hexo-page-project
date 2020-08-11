@@ -17,8 +17,7 @@
 }
 
 .header-inner {
-  background: url(/images/bears-desktop.png) center;
-  background-size: cover;
+  background: var(--content-bg-color);
   border-radius: $border-radius-inner;
   box-shadow: $box-shadow-inner;
   overflow: hidden;
@@ -32,8 +31,6 @@
   }
 
   +tablet-mobile() {
-    background: url(/images/bears-mobile.png) center;
-    background-size: cover;
     border-radius: initial;
     position: relative;
     width: auto;

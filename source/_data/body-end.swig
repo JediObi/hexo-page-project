@@ -71,6 +71,7 @@
             
             window.onload = function () {
                 initLive2dOpacityOnload();
+		}
         });
 
     </script>

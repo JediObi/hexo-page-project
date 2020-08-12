@@ -1,0 +1,61 @@
+{% block live2dOpacityControl %}
+    <script>
+    	var isDesktopEnv = true;
+	var envSetLock = false;
+	var isTransparent = false;
+	var transparentActiveHeight = 200;
+	var live2dDesktopBottomAbs = 36;
+
+	function initLive2dOpacityOnload() {
+		setLive2dOpacity();
+	}
+
+	function changeLive2dOpacityOnScroll() {
+		setLive2dOpcity();
+	}
+
+	function setLive2dOpacity() {
+		// 当前窗口body的top位置相对于全文高度所处的高度
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                var scrollWindow= document.body;
+                // 窗口高度
+                var clientHeight= scrollWindow.clientHeight;
+                // 当前body的全部高度
+                var scrollHeight= scrollWindow.scrollHeight;
+                var clientBottomToScrollBottom= scrollHeight - (scrollTop + clientHeight);
+                var live2dWidget = document.querySelector("#live2d-widget");
+                if(live2dWidget != undefined && live2dWidget != null ){
+                    var bottom = live2dWidget.getBoundingClientRect().bottom;
+                    var overViewBottom = bottom - clientHeight;
+
+                    if(overViewBottom<= live2dWidgetDesktopBottom){
+		    	if(!setEnvLock) {
+				isDesktopEnv = true;
+				setEnvLock = true;
+			}
+                        if(){
+                           opacitySet = false;
+                           live2dWidget.style.opacity=1; 
+                        }
+                        return;
+                    }
+                    if (opacityH<=200 && !opacitySet){
+                        live2dWidget.style.opacity=0.5;
+                        opacitySet = true;
+                        // console.log("滚动距离" + scrollTop+",视觉高度"+viewH+",内容高度"+ch);
+                    }else if(opacityH>200 && opacitySet){
+                        live2dWidget.style.opacity=1;
+                        opacitySet = false;
+                    }
+                }
+
+	}
+        document.addEventListener('DOMContentLoaded', () => {
+            var opacitySet = false;
+            window.onscroll = function(){
+                                // console.log("滚动距离" + scrollTop+",视觉高度"+viewH+",内容高度"+ch);
+            }
+        });
+
+    </script>
+{% endblock %}

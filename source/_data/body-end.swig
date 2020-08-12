@@ -1,10 +1,8 @@
 {% block live2dOpacityControl %}
     <script>
         var isDesktopEnv = true;
-        var isEnvLocked = false;
         var isTransparentActive = false;
         var transparentActiveHeight = 200;
-        var live2dDesktopBottomLimit = 36;
 
         /**
         * 组件加载时
@@ -12,18 +10,14 @@
         * 初始化live2d的透明度
         * 桌面与移动端切换时修改透明度及live2d bottom
         **/
-        function initLive2dOpacityOnload() {
-            setLive2dOpacity();
-        }
-
-        /**
-        * 页面滚动时修改live2d透明度
-        **/
-        function changeLive2dOpacityOnScroll() {
-            setLive2dOpacity();
-        }
-
-        function setLive2dOpacity() {
+        function initLive2dOpacityAndBottomOnload() {
+            // console.log("初始化");
+            var windowMatch = window.matchMedia('(max-width: 991px)');
+            if(windowMatch.matches){
+                isDesktopEnv = false;
+            }else{
+                return;
+            }
             // 当前窗口body的top位置相对于全文高度所处的高度
             var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             var scrollWindow = document.body;
@@ -35,35 +29,58 @@
             var clientBottomToScrollBottom = scrollHeight - (scrollTop + clientHeight);
             var live2dWidget = document.querySelector("#live2d-widget");
             if(live2dWidget != undefined && live2dWidget != null ){
-                var bottom = live2dWidget.getBoundingClientRect().bottom;
-                var overViewBottom = bottom - clientHeight;
-
-                if(overViewBottom <= live2dDesktopBottomLimit){
-                    if(!isEnvLocked) {
-                        isDesktopEnv = true;
-                        isEnvLocked = false;
-                    }
-                    if(isTransparetActive){
-                        isTransparentActive = false;
-                        live2dWidget.style.opacity=1; 
-                    }
-                    if(!isDeskTopEnv){
-                        live2dWidget.style.setProperty("bottom", "-55px", "important");
-                    }
-                    return;
+                if(!isDesktopEnv){
+                    live2dWidget.style.bottom = "-55px";
                 }else{
-                    if(!isEnvLocked){
-                        isDesktopEnv = false;
-                        isEnvLocked = true;
-                    }
-                    if(isDesktopEnv) {
-                        live2dWidget.style.setProperty("bottom", "-35px", "important");
-                    }
+                    live2dWidget.style.bottom = "-35px";
                 }
                 if (clientBottomToScrollBottom <= transparentActiveHeight && !isTransparentActive){
-                    live2dWidget.style.setProperty("opacity", "0.5", "important");
+                    live2dWidget.style.setProperty("opacity", "0.5");
                     isTransparentActive = true;
-                    // console.log("滚动距离" + scrollTop+",视觉高度"+viewH+",内容高度"+ch);
+                }else if(clientBottomToScrollBottom > transparentActiveHeight && isTransparentActive){
+                    live2dWidget.style.opacity = 1;
+                    isTransparentActive = false;
+                }
+            }
+        }
+
+        /**
+        * 页面滚动时修改live2d透明度
+        **/
+        function changeLive2dOpacityAndBottomOnScroll() {
+            // console.log("滑动");
+            var windowMatch = window.matchMedia('(max-width: 991px)');
+            var isDesktop = !windowMatch.matches;
+
+            // 当前窗口body的top位置相对于全文高度所处的高度
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var scrollWindow = document.body;
+            // 窗口高度
+            var clientHeight = scrollWindow.clientHeight;
+            // 当前body的全部高度
+            var scrollHeight = scrollWindow.scrollHeight;
+            // 当前窗口底部距离内容底部的绝对距离
+            var clientBottomToScrollBottom = scrollHeight - (scrollTop + clientHeight);
+            
+            var live2dWidget = document.querySelector("#live2d-widget");
+            if(live2dWidget != undefined && live2dWidget != null ){
+                // env mobile -> desktop
+                if(!isDesktopEnv && isDesktop){
+                    live2dWidget.style.bottom = "-55px";
+                }else if(isDesktopEnv && !isDesktop){
+                    live2dWidget.style.bottom = "-35px";
+                }
+                // env desktop -> mobile
+                if(isDesktop){
+                    if(isTransparentActive){
+                        isTransparentActive = false;
+                        live2dWidget.style.opacity = 1;
+                    }
+                    return;
+                }
+                if (clientBottomToScrollBottom <= transparentActiveHeight && !isTransparentActive){
+                    live2dWidget.style.setProperty("opacity", "0.5");
+                    isTransparentActive = true;
                 }else if(clientBottomToScrollBottom > transparentActiveHeight && isTransparentActive){
                     live2dWidget.style.opacity = 1;
                     isTransparentActive = false;
@@ -72,12 +89,12 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            window.onscroll = function(){
-                changeLive2dOpacityOnScroll();
-            }
-            
             window.onload = function () {
-                initLive2dOpacityOnload();
+                initLive2dOpacityAndBottomOnload();
+            }
+
+            window.onscroll = function(){
+                changeLive2dOpacityAndBottomOnScroll();
             }
         });
     </script>

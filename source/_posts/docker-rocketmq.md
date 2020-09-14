@@ -46,16 +46,44 @@ user.home指定到物理机目录下
 
 测试环境使用默认配置，不需要额外配置日志，数据目录，也不需要配置文件
 
-nameserver直接使用局域网实例名 
+注意需要挂在配置文件和指定配置，因为要配置broker监听，不配置监听会导致宿主机无法连接docker里的rocketmq
 
 ```
 ~:docker run --name rmqbroker --link rmqserver:namesrv \
  -p 10911:10911 -p 10909:10909 \
  -v /etc/localtime:/etc/localtime:ro \
+ -v /home/nomq/work/docker_data/rocketmq/conf:/etc/rocketmq/conf:ro \
  -e "NAMESRV_ADDR=namesrv:9876" -e "JAVA_OPTS=-Duser.home=/opt" \
  -e "JAVA_OPT_EXT=-server -Xms128m -Xmx128m" \
  -d rocketmqinc/rocketmq \
- sh mqbroker
+ sh mqbroker -c /etc/rocketmq/conf/broker.conf
+```
+
+```conf
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+
+brokerClusterName = DefaultCluster
+brokerName = broker-a
+brokerId = 0
+deleteWhen = 04
+fileReservedTime = 48
+brokerRole = ASYNC_MASTER
+flushDiskType = ASYNC_FLUSH
+# broker服务器会监听这个地址的消息，填写宿主机ip
+brokerIP1=192.168.0.106
 ```
 
 #### 2.2.3 控制台

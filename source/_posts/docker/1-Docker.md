@@ -177,6 +177,36 @@ open a new terminal of a docker container.
 
 ### **9. 注意**
 
-禁止套娃：容器不能二次虚拟化，所以在容器中无法再次启动docker容器。如果有这种特殊的需求，可以使用 docker in docker 镜像，对应的仓库是 docker-dind
+#### 9.1 禁止套娃：容器不能二次虚拟化，所以在容器中无法再次启动docker容器。如果有这种特殊的需求，可以使用 docker in docker 镜像，对应的仓库是 docker-dind
+
+
+#### 9.2 权限设置
+docker 守护进程默认只开启了 unix socket 监听，对应的进程文件为 /var/run/docker.sock，当然你也可以在service文件里修改。默认的这个文件归属于docker用户组和超级用户，普通用户组没有权限操作这个文件，所以普通用户需要添加到docker组。
+
+可能系统默认不开启docker，开启之后会影响性能尤其是安装了k8s之后，所以可能需要手动开启docker进程。
+
++ 命令：添加到docker用户组
+```
+~:sudo gpasswd -a user_name docker
+```
+
++ 权限生效，命令或重启电脑
+```
+# 刷新用户组，只对当前会话有效
+~:newgrp docker
+```
+
++ 命令：从docker用户组删除用户
+```
+~:sudo gpasswd -d user_name docker
+```
+
+docker也支持tcp监听，本地测试不需要开启。在service里配置，一般开启远程就是指开启tcp监听，如果需要在远程服务器上上传镜像，一般是需要开启这个的。
+
+#### 9.3 linux上的用户界面 cockpit
+
+manajro 安装cockpit，然后在启动`systemctl start cockpit`。
+
+然后打开浏览器`https://localhost:9090`，用户名与密码就是当前系统的用户名和密码，可以方便的管理容器。
 
 

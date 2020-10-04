@@ -12,16 +12,49 @@ expect关键字可以用于shell脚本交互并自动填充内容，比如脚本
 
 <!-- more -->
 
-### (1) set timeout n
+## 1. set timeout n
 
-```
-this will send an stop sign to expect after n seconds, such like EOF
+一般都要设置超时时间，比如命令可能是git或ssh这种带有网络请求的，返回交互命令的时间比较长，如果超时时间太短，提前超时就会结束掉epxect。
+
+## 2. expect eof and interact
+
+这两个一般用在expect脚本末尾，只选一个即可。
+
+如果是expect执行完后，不需要交互，用expect eof。
+
+如果expect执行完，用户需要接管操作权，需要用interact，比如自动连接ssh。
+
+
+## 3. ssh自动连接
+
+自动连接之后，把控制权交给用户
+
+```shell
+#!/usr/bin/expect
+
+set password "password"
+set timeout 5
+spawn ssh -l admin 192.168.0.1
+expect {
+    "yes/no" {
+        send "yes\n";
+        exp_continue
+    }
+    "password:" {
+        send "${password}\n";
+        exp_continue
+    }
+}
+interact
 ```
 
-### (2) expect eof and interact
+## 4. 自动执行命令
 
-```
-interact: keep the spawn command process alive and open an treminal tunnel, then you can interact with the target over the spawn command.
-expect eof: keep the spawn command process alive without terminal. It will 
-need a sign like EOF to do that. set timeout can send that sign.
+```shell
+#!/usr/bin/expect
+
+set password "password"
+set timeout 5
+spawn 
+expect eof
 ```

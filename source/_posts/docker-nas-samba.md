@@ -25,10 +25,14 @@ docker pull dperson/samba
 
 ```
 docker run -it --name samba_docker -p 139:139 -p 445:445 -v /home/user_name/nas_data:/home/shares/shareA -d dperson/samba -w "WORKGROUP" -u "userA;123456789" -s "shareA;/home/shares/shareA;yes;no;no;userA;userA;userA"
+
+docker run -it --name samba_docker -p 139:139 -p 445:445 -p 137:137/udp -p 138:138/udp -v /run/media/nomq/linux_work/work/mi-camera:/home/shares/shareA -d dperson/samba -w "WORKGROUP" -u "userA;123456789" -s "shareA;/home/shares/shareA;yes;no;no;userA;userA;userA" -n
 ```
 
 参数说明
 139/445端口 samba默认使用的两个端口
+-n  开启nmbd广播进程，samba使用nmbd做局域网广播，一些iot设备只支持扫描发现nas，不支持手动输入ip，所以要开启nmbd服务
+137-138/udb nmbd默认使用这两个端口做udp广播
 -w 工作组
 -u 用户名和密码
 -s samba配置文件新增配置节点

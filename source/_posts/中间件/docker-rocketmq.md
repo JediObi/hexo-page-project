@@ -4,7 +4,11 @@ copyright: true
 mathjax: false
 date: 2020-09-12 22:10:09
 categories:
+    - 中间件
 tags:
+    - 中间件
+    - rocketmq
+    - docker
 ---
 rocketmq自带高可用的集群配置组件，本文将介绍单机和集群的配置
 

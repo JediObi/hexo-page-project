@@ -4,7 +4,11 @@ copyright: true
 mathjax: false
 date: 2020-09-12 22:09:57
 categories:
+    - 中间件
 tags:
+    - 中间件
+    - redis
+    - docker
 ---
 本文使用基于alpine的redis镜像。简单的配置一个redis集群。
 
@@ -24,6 +28,11 @@ tags:
 
 ```
 ~:docker run --name redis-test -p 6379:6379 -v /etc/localtime:/etc/localtime:ro -itd redis:alpine3.12
+```
+
+带密码
+```
+docker run -d --name redis-test -p 6379:6379 -v /etc/localtime:/etc/localtime:ro redis:alpine3.12 --requirepass "123456"
 ```
 
 

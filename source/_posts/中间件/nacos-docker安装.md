@@ -242,15 +242,16 @@ nacos/nacos-server
 以上配置使用默认的8848端口
 
 env参数及默认值如下
+
 |参数名|介绍|默认值|
 |----|----|----|
-|MODE|	cluster/standalone	|cluster/standalone default cluster
-|NACOS_SERVERS|	nacos cluster address|	eg. ip1:port1 ip2:port2 ip3:port3
+|MODE|	cluster/standalone	|cluster/standalone default cluster|
+|NACOS_SERVERS|	nacos cluster address |	eg. ip1:port1 ip2:port2 ip3:port3|
 |PREFER_HOST_MODE|	Whether hostname are supported|	hostname/ip default ip|
-|NACOS_APPLICATION_PORT|	nacos server port|	default 8848
-|NACOS_SERVER_IP|	custom nacos server ip when network was mutil-network|	
+|NACOS_APPLICATION_PORT|	nacos server port|	default 8848|
+|NACOS_SERVER_IP|	custom nacos server ip when network was mutil-network||	
 |SPRING_DATASOURCE_PLATFORM|	standalone support mysql|	mysql / empty default empty|
-|MYSQL_SERVICE_HOST|	mysql host|	
+|MYSQL_SERVICE_HOST|	mysql host|	|
 |MYSQL_SERVICE_PORT|	mysql database port|	default : 3306|
 |MYSQL_SERVICE_DB_NAME|	mysql database name||	
 |MYSQL_SERVICE_USER|	username of database|	|

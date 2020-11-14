@@ -229,15 +229,15 @@ INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');
 镜像： nacos/nacos-server
 
 ```
-docker run -d --name nacos-test -p 8848:8848 \ 
--v /home/username/work/docker/nacos/logs:/home/nacos/logs \ 
--e MODE=standalone \ 
--e SPRING_DATASOURCE_PLATFORM=mysql \
--e MYSQL_SERVICE_HOST=172.17.0.2 \
--e MSYQL_SERVICE_USER=root \
--e MYSQL_SERVICE_PASSWORD=123456 \
--e MYSQL_SERVICE_DB_NAME=nacos \
-nacos/nacos-server
+docker run -d --name nacos-test -p 8848:8848 \
+ -v /home/username/work/docker/nacos/logs:/home/nacos/logs \
+ -e MODE=standalone \
+ -e SPRING_DATASOURCE_PLATFORM=mysql \
+ -e MYSQL_SERVICE_HOST=172.17.0.2 \
+ -e MYSQL_SERVICE_USER=root \
+ -e MYSQL_SERVICE_PASSWORD=123456 \
+ -e MYSQL_SERVICE_DB_NAME=nacos \
+ nacos/nacos-server
 ```
 以上配置使用默认的8848端口
 

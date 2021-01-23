@@ -28,12 +28,12 @@ tags:
 日志挂载到物理机
 
 ```
-~:docker run --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 \
+~:docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 \
     -v /usr/local/docker/mysql/conf:/etc/mysql \
     -v /usr/local/docker/mysql/logs:/var/log/mysql \
     -v /usr/local/docker/mysql/data:/var/lib/mysql \
     -v /etc/localtime:/etc/localtime:ro \
-    -itd mariadb \
+    mariadb \
     --character-set-server=utf8 --collation-server=utf8_bin
 ```
 

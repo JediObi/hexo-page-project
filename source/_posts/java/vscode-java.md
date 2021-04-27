@@ -145,3 +145,9 @@ Pretty Json 和 Prettier 都不能格式化，只能用 vscode 自带 vscode.jso
     "editor.defaultFormatter": "vscode.json-language-features"
   },
 ```
+
+### 15. git插件
+
+git history 编辑器中右键可以查看文件的history
+
+gitlens git栏会有更多细分的子栏目，代码里也会显示当前行最后的修改记录

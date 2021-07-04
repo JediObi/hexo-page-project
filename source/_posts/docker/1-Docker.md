@@ -109,6 +109,15 @@ docker的安装配置。
 
     自定义容器时，一般用一个空的Linux镜像，没有指定任务，为了保持容器运行，一般会指定 /bin/bash, 然后使用 -t 创建一个终端使之在前台运行，但是终端的exit命令会退出终端导致前台任务结束，容器也就停止了。所以要增加一个 -d 守护进程，退出或在后台可以继续保持前台任务执行。 -i 参数可以连接到容器的标准输入，标准输入也是一个前台任务(使用ctrl+c会退出stdin)，一般不单独用。
 
+    + 指定网络
+  
+    run ... --network=网络名称
+
+    + 指定ip
+    在网络限定的ip段内指定
+
+    run ... --ip 172.17.0.3
+
 + #### 3.2 容器进程管理 ps 命令
 
     ```
@@ -175,7 +184,7 @@ docker的安装配置。
     用于查看容器的一些属性，比如创建(run)时的一些参数(比如mysql的密码)，比如容器的网络地址等。
 
 
-### **4. 网卡管理**
+### **4. 网络管理**
 
 
 + #### 4.1 查看所有网卡
@@ -185,6 +194,32 @@ docker的安装配置。
 + #### 4.2 查看网卡配置，比如bridge
 
     `docker network inspect bridge`
+
+    docker有四中网络模式(driver)
+
+    host模式, run --net=host, 容器与宿主机共享网络，你看到的将是宿主机的网络配置
+
+    container, run --net=容器id, 使用另一个宿主机的网卡配置
+
+    none, run --net=none, 容器自有配置，没用过
+
+    bridge, run --net=bridge, 默认的，桥接模式
+
+    这四个模式(driver)是默认存在的，docker默认创建了四中模式同名的network。我们自行创建的网络也是要以这四个driver的一个作为driver。
+
+
+
+
++ #### 4.3 创建网络
+
+`docker network create --driver bridge --subnet=172.18.0.0/16 --gateway=172.18.0.1 mynet`
+
+创建一个bridge模式的网络
+    网络模式在上一节介绍过
+网络名称mynet
+子网段 172.18.0.0/16
+    要指定网段和掩码
+网关 172.18.0.1
 
 ### **5. 轻量级linux镜像 alpine**
 
@@ -222,3 +257,4 @@ docker也支持tcp监听，本地测试不需要开启。在service里配置，�
 manajro 安装cockpit，然后在启动`systemctl start cockpit`。
 
 然后打开浏览器`https://localhost:9090`，用户名与密码就是当前系统的用户名和密码，可以方便的管理容器。
+

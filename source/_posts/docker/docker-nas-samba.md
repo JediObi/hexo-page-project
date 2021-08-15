@@ -38,8 +38,8 @@ docker run -it --name samba_docker -p 139:139 -p 445:445 -p 137:137/udp -p 138:1
 -s samba配置文件新增配置节点
 ```
 shareA;/home/shares/shareA;yes;no;no;userA;userA;userA
-shareA 节点shareA
-/home/shares/shareA 共享目录/home/shares/shareA
+shareA samba容器中共享文件夹的别名,也就是进入samba后显示的文件夹名称为shareA
+/home/shares/shareA 要共享到samba的目录目录，这里就是/home/shares/shareA
 yes 共享名称对所有工作组用户可见
 no 不是只读（也就是说可写）
 no 不允许guest用户

@@ -162,9 +162,8 @@ services:
   app1:
     networks:
       network1:
-        app_net:
-            ipv4_address: 172.0.0.3
-            ipv6_address: 2001:3984:3989::10
+          ipv4_address: 172.0.0.3
+          ipv6_address: 2001:3984:3989::10
 networks:
   network1:
     driver: bridge/host/none/container 四种驱动之一
